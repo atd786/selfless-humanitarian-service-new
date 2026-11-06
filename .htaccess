@@ -1,21 +1,8 @@
-DirectoryIndex dist/index.html
-
 <IfModule mod_rewrite.c>
   RewriteEngine On
-
-  # Pass existing files through
-  RewriteCond %{REQUEST_FILENAME} -f
-  RewriteRule ^ - [L]
-
-  # If requesting an asset or image, check inside dist/
-  RewriteCond %{REQUEST_FILENAME} !-f
-  RewriteRule ^assets/(.*)$ dist/assets/$1 [L]
-
-  RewriteCond %{REQUEST_FILENAME} !-f
-  RewriteRule ^([^/]+\.(png|jpg|jpeg|svg|ico|gif|webp))$ dist/$1 [L]
-
-  # For any other route, fallback to dist/index.html
+  RewriteBase /
+  RewriteRule ^index\.html$ - [L]
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
-  RewriteRule ^ dist/index.html [L]
+  RewriteRule . /index.html [L]
 </IfModule>
