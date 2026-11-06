@@ -4,12 +4,12 @@
   "version": "2.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build && powershell -Command \"Copy-Item -Path dist/* -Destination . -Recurse -Force\"",
-    "preview": "vite preview"
+    "dev": "node ./node_modules/vite/bin/vite.js",
+    "build": "powershell -Command \"Copy-Item index.source.html index.html -Force; node ./node_modules/vite/bin/vite.js build; Copy-Item -Path dist/* -Destination . -Recurse -Force\"",
+    "preview": "node ./node_modules/vite/bin/vite.js preview"
   },
   "dependencies": {
-    "lucide-react": "^1.70.0",
+    "lucide-react": "^1.16.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
