@@ -1,36 +1,164 @@
-.mission-vision {
-  display: flex;
-  justify-content: space-between;
-  align-items: stretch;
-  flex-wrap: wrap;
-  gap: 20px;
-  padding: 20px;
-  background-color: #f9f9f9;
-}
-
-.box {
-  flex: 1;
-  min-width: 300px;
-  padding: 20px;
-  border-radius: 8px;
+.mission-vision-section {
+  padding: 96px 0;
   background-color: #ffffff;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-.box h2 {
-  margin-bottom: 10px;
-  color: #880015;
-  font-size: 1.5rem;
+.mv-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+  margin-bottom: 48px;
 }
 
-.box p {
-  color: #333;
-  line-height: 1.6;
+.mv-card {
+  border-radius: var(--radius-lg);
+  padding: 36px;
+  background-color: #ffffff;
+  border: 1px solid var(--border);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
 }
 
-/* Responsive layout for small screens */
-@media (max-width: 768px) {
-  .mission-vision {
-    flex-direction: column;
+.mv-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.09);
+}
+
+.mission-card {
+  border-top: 4px solid var(--primary);
+}
+
+.vision-card {
+  border-top: 4px solid var(--accent);
+}
+
+.mv-header {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 20px;
+}
+
+.mv-icon-badge {
+  width: 58px;
+  height: 58px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.mission-badge {
+  background-color: var(--primary-subtle);
+  color: var(--primary);
+}
+
+.vision-badge {
+  background-color: var(--accent-light);
+  color: var(--accent);
+}
+
+.mv-kicker {
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+}
+
+.mv-title {
+  font-size: 1.7rem;
+  font-weight: 800;
+  color: var(--text-dark);
+}
+
+.mv-statement {
+  font-size: 1.05rem;
+  color: var(--text-body);
+  line-height: 1.75;
+  margin-bottom: 24px;
+}
+
+.mv-divider {
+  height: 1px;
+  background-color: var(--border);
+  margin-bottom: 24px;
+}
+
+.mv-checklist {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.mv-checklist-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 0.95rem;
+  color: var(--text-body);
+  font-weight: 500;
+}
+
+.check-icon {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.check-mission {
+  color: var(--primary);
+}
+
+.check-vision {
+  color: var(--accent);
+}
+
+/* 3 Pillars Strip */
+.pillars-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  background-color: var(--bg-page);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+}
+
+.pillar-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.pillar-icon {
+  color: var(--primary);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.pillar-item h4 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 4px;
+}
+
+.pillar-item p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+@media (max-width: 900px) {
+  .mv-cards-grid {
+    grid-template-columns: 1fr;
+  }
+  .pillars-strip {
+    grid-template-columns: 1fr;
+    gap: 20px;
   }
 }

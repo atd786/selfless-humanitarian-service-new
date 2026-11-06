@@ -1,22 +1,51 @@
+import React, { useState } from "react";
 import Header from "./Header";
-import Slideshow from "./Slideshow";
+import Hero from "./Hero";
 import MissionVision from "./MissionVision";
-import Team from "./Team";
-import History from "./History";
 import Project from "./Project";
-import Donations from "./Donations"
+import History from "./History";
+import Team from "./Team";
+import Gallery from "./Gallery";
+import Donations from "./Donations";
+import Footer from "./Footer";
+import DonationModal from "./DonationModal";
 
-function App(){
-  return(
-    <div>
-      <Header/>
-      <Slideshow/>
-      <MissionVision/>
-      <Team/>
-      <History/>
-      <Project/>
-      <Donations/>
+function App() {
+  const [modalOpen, setModalOpen] = useState(false);
+  const [selectedCause, setSelectedCause] = useState("");
+
+  const handleOpenDonate = (cause = "") => {
+    setSelectedCause(cause);
+    setModalOpen(true);
+  };
+
+  const handleCloseDonate = () => {
+    setModalOpen(false);
+  };
+
+  return (
+    <div className="app-root">
+      <Header onDonateClick={() => handleOpenDonate("General Educational Fund")} />
+      
+      <main>
+        <Hero onDonateClick={() => handleOpenDonate("General Educational Fund")} />
+        <MissionVision />
+        <Project onDonateClick={handleOpenDonate} />
+        <History />
+        <Team />
+        <Gallery />
+        <Donations selectedProject={selectedCause} />
+      </main>
+
+      <Footer />
+
+      <DonationModal 
+        isOpen={modalOpen} 
+        onClose={handleCloseDonate} 
+        defaultProject={selectedCause}
+      />
     </div>
   );
 }
+
 export default App;

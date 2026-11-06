@@ -1,60 +1,224 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Project.css";
+import { 
+  GraduationCap, 
+  Wrench, 
+  Utensils, 
+  BookOpen, 
+  Clock, 
+  Award, 
+  MapPin, 
+  CheckCircle2, 
+  ArrowRight,
+  Heart,
+  Sparkles
+} from "lucide-react";
 
-function Project() {
+function Project({ onDonateClick }) {
+  const [activeTab, setActiveTab] = useState("all");
+
+  const courses = [
+    { name: "Computer Applications & IT Office Skills", duration: "3 Months", icon: "💻" },
+    { name: "Computer Hardware & Network Basics", duration: "4 Months", icon: "🖥️" },
+    { name: "Basic Web Development & Digital Literacy", duration: "6 Months", icon: "🌐" },
+    { name: "Electrical & Home Appliances Repair", duration: "4 Months", icon: "⚡" },
+    { name: "Mobile Phone Hardware & Diagnostics", duration: "3 Months", icon: "📱" },
+    { name: "Solar Panel & UPS Installation & Maintenance", duration: "2 Months", icon: "☀️" },
+  ];
+
   return (
-    <section className="project-section">
-      <div className="project-box">
-        <h2 className="project-title">Our Envisioned Projects</h2>
-        <h2>Project 1: High School</h2>
-        <p>
-          We would like to extend our existing elementary school to a high school with very good 
-          quality of education for poor children, who cannot afford private schools and academies. 
-        </p>
-        <p>
-          On the one hand, education in Pakistan is very competitive, and only students scoring 
-          very high grades in the 9<sup>th</sup> to 12<sup>th</sup> year can get admission to good 
-          universities. On the other hand, the education quality of government schools is so poor 
-          that over 90% students cannot successfully gain admission to good universities, and over 
-          50% do not pass their high school exams. Furthermore, the education in government schools
-          is in the local language Urdu, and students know very little English, which is a huge 
-          setback for a promising future career. 
-        </p>
-        <p>
-          We intend to fill this gap in our community, so that poor students can get high quality 
-          education in English, and can score a high grade in the highly competitive 9<sup>th
-          </sup> to 12<sup>th</sup> grade exams. Students from poor families, having mostly illiterate 
-          parents do not have anyone at home to teach them and supervise their education. This will 
-          require us to operate both, a day-time school and an evening academy, for school work, 
-          homework and intensive training in the 9<sup>th</sup> to 12<sup>th</sup> year subjects, 
-          so that the students can excel in their coursework.  
-        </p>
-        <p>
-          Meals and appropriate rest breaks will be provided between the day time school and evening 
-          academy. Meals are important because poor children often come to school without breakfast, 
-          and lack nutritious meals during the day. The school is located in Shahdara, Lahore, Pakistan, 
-          a very large marginalized community in Lahore.
-        </p>
-        <h2>Project 2: Technical Training Institute</h2>
-        <p>
-          Our new project (in the design phase) is to setup and run a technical training institute 
-          for very poor youth. The institute will provide mostly free education and training, with only 
-          a very small token fee, which is easily affordable by poor people. The large expenses of the 
-          institute are expected to be met from donations from donors and charitable organizations. 
-          The institute will be setup in or near Shahdara, Lahore, Pakistan, a very large marginalized 
-          community in Lahore.
-        </p>
-        <p>
-          The institute will offer various short courses of 2 to 6 month duration, including study and 
-          lab work, and qualifying students will be given certificates of completion. The courses will 
-          be those which are in high demand in industry, so that persons who complete the courses can 
-          easily get employment, and a means of income. The full list of courses being considered is 
-          given in the sections below. Our focus will be to hire knowledgeable and capable teachers, to 
-          give the students a detailed understanding of the subject, so that the graduating student is 
-          capable enough to secure and work on a job in his field of training, and get established in 
-          the industry, and can secure a means of livelihood for the rest of his life. This will result 
-          in the uplift of a very poor community.
-        </p>
+    <section className="projects-section" id="projects">
+      <div className="container">
+        <div className="section-header">
+          <div className="badge-tag">
+            <Sparkles size={14} /> Transforming Communities
+          </div>
+          <h2 className="section-title">Our Envisioned Projects</h2>
+          <p className="section-subtitle">
+            Two strategic, high-impact initiatives specifically tailored to empower 
+            impoverished youth and children in Shahdara, Lahore.
+          </p>
+        </div>
+
+        {/* Project 1: High School & Evening Academy */}
+        <div className="project-feature-card">
+          <div className="project-card-grid">
+            <div className="project-image-column">
+              <div className="project-image-wrapper">
+                <img 
+                  src="./image1.png" 
+                  alt="Students in classroom learning" 
+                  className="project-image"
+                />
+                <div className="project-badge-floating">
+                  <GraduationCap size={18} /> High School Expansion
+                </div>
+              </div>
+
+              {/* Location & Schedule Highlights */}
+              <div className="project-quick-facts">
+                <div className="fact-item">
+                  <MapPin size={16} className="fact-icon" />
+                  <span>Shahdara, Lahore, Pakistan</span>
+                </div>
+                <div className="fact-item">
+                  <Utensils size={16} className="fact-icon" />
+                  <span>Daily Nutritious Meals Included</span>
+                </div>
+                <div className="fact-item">
+                  <Clock size={16} className="fact-icon" />
+                  <span>Day School + Evening Academy</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="project-text-column">
+              <div className="project-tag">Project 1</div>
+              <h3 className="project-name">
+                English-Medium High School & Evening Academy
+              </h3>
+              <p className="project-lead">
+                Extending our established elementary school to a quality high school (Grades 9 to 12) 
+                for bright students from impoverished backgrounds who cannot afford private academies.
+              </p>
+
+              <div className="problem-solution-box">
+                <h4 className="box-mini-title">Why This Project is Crucial:</h4>
+                <ul className="project-points-list">
+                  <li>
+                    <CheckCircle2 size={16} className="point-icon" />
+                    <span>
+                      <strong>The College Barrier:</strong> In Pakistan, only high-scoring students in 9th–12th grade matric/intermediate exams can enter reputable universities. Over 90% of public school students fail to qualify.
+                    </span>
+                  </li>
+                  <li>
+                    <CheckCircle2 size={16} className="point-icon" />
+                    <span>
+                      <strong>English Proficiency:</strong> Government schools teach in Urdu with minimal English, creating an insurmountable handicap in higher education and corporate careers.
+                    </span>
+                  </li>
+                  <li>
+                    <CheckCircle2 size={16} className="point-icon" />
+                    <span>
+                      <strong>Supervised Homework:</strong> Parents from poor backgrounds are largely illiterate and cannot assist. Our evening academy provides rigorous tutoring and homework supervision.
+                    </span>
+                  </li>
+                  <li>
+                    <CheckCircle2 size={16} className="point-icon" />
+                    <span>
+                      <strong>Daily Nutritional Support:</strong> Students frequently arrive with empty stomachs. Free wholesome meals and rest breaks ensure cognitive energy throughout the day.
+                    </span>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="project-cta-row">
+                <button 
+                  className="btn btn-primary"
+                  onClick={() => onDonateClick("Project 1: High School")}
+                >
+                  <Heart size={16} fill="currentColor" /> Sponsor High School Project
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Project 2: Technical Training Institute */}
+        <div className="project-feature-card project-card-reverse">
+          <div className="project-card-grid">
+            <div className="project-text-column">
+              <div className="project-tag project-tag-accent">Project 2 (In Design Phase)</div>
+              <h3 className="project-name">
+                Technical & Vocational Training Institute
+              </h3>
+              <p className="project-lead">
+                A dedicated skills center providing hands-on certified training in high-demand industrial 
+                and IT trades for marginalized youth who cannot afford college.
+              </p>
+
+              <div className="problem-solution-box">
+                <h4 className="box-mini-title">Key Model & Objectives:</h4>
+                <ul className="project-points-list">
+                  <li>
+                    <CheckCircle2 size={16} className="point-icon icon-accent" />
+                    <span>
+                      <strong>Industry-Relevant Short Courses:</strong> 2 to 6 month intensive tracks combining classroom theory and extensive lab work.
+                    </span>
+                  </li>
+                  <li>
+                    <CheckCircle2 size={16} className="point-icon icon-accent" />
+                    <span>
+                      <strong>Zero Barrier to Entry:</strong> Free or nominal token fees, ensuring poverty is never an obstacle to learning a livelihood.
+                    </span>
+                  </li>
+                  <li>
+                    <CheckCircle2 size={16} className="point-icon icon-accent" />
+                    <span>
+                      <strong>Capable Mentors & Teachers:</strong> Experienced industry practitioners teaching practical troubleshooting skills that employers actively seek.
+                    </span>
+                  </li>
+                  <li>
+                    <CheckCircle2 size={16} className="point-icon icon-accent" />
+                    <span>
+                      <strong>Livelihood for Life:</strong> Direct preparation for self-employment or technical jobs, breaking generational poverty for entire households.
+                    </span>
+                  </li>
+                </ul>
+              </div>
+
+              {/* Courses Grid Preview */}
+              <div className="courses-preview-section">
+                <h5 className="courses-title">Envisioned Short Courses:</h5>
+                <div className="courses-grid">
+                  {courses.map((course, idx) => (
+                    <div key={idx} className="course-pill">
+                      <span className="course-icon">{course.icon}</span>
+                      <div className="course-text">
+                        <span className="course-name">{course.name}</span>
+                        <span className="course-duration">{course.duration}</span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="project-cta-row">
+                <button 
+                  className="btn btn-accent"
+                  onClick={() => onDonateClick("Project 2: Technical Training Institute")}
+                >
+                  <Heart size={16} fill="currentColor" /> Fund Technical Institute
+                </button>
+              </div>
+            </div>
+
+            <div className="project-image-column">
+              <div className="project-image-wrapper">
+                <img 
+                  src="./image 2.png" 
+                  alt="Technical institute vocational students" 
+                  className="project-image"
+                />
+                <div className="project-badge-floating badge-accent">
+                  <Wrench size={18} /> Vocational Skills Lab
+                </div>
+              </div>
+
+              <div className="project-quick-facts">
+                <div className="fact-item">
+                  <Award size={16} className="fact-icon icon-accent" />
+                  <span>Completion Certificates Awarded</span>
+                </div>
+                <div className="fact-item">
+                  <Clock size={16} className="fact-icon icon-accent" />
+                  <span>2 to 6 Month Fast-Track Durations</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
   );
