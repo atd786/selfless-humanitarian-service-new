@@ -1,0 +1,420 @@
+/* DonatePage.css */
+
+.donate-page {
+  animation: fadeInPage 0.4s ease;
+}
+
+.sponsor-calculator-section {
+  padding: 70px 0 80px;
+  background-color: #f8fafc;
+}
+
+.currency-switch-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.switch-label {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-main, #0f172a);
+}
+
+.currency-pill-toggle {
+  display: inline-flex;
+  background-color: #ffffff;
+  padding: 4px;
+  border-radius: 30px;
+  border: 1px solid var(--border, #cbd5e1);
+}
+
+.cur-btn {
+  padding: 6px 18px;
+  border-radius: 20px;
+  border: none;
+  background: none;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-muted, #64748b);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.cur-btn.active {
+  background-color: var(--primary, #047857);
+  color: #ffffff;
+  box-shadow: 0 2px 6px rgba(4, 120, 87, 0.25);
+}
+
+.sponsorship-tiers-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  margin-top: 48px;
+}
+
+.tier-card {
+  background-color: #ffffff;
+  border: 1.5px solid var(--border, #e2e8f0);
+  border-radius: var(--radius-lg, 16px);
+  padding: 32px 26px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.tier-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.07);
+}
+
+.tier-card.selected-tier {
+  border-color: var(--primary, #047857);
+  box-shadow: 0 0 0 3px rgba(4, 120, 87, 0.2), 0 14px 30px rgba(0,0,0,0.08);
+}
+
+.tier-badge-pill {
+  position: absolute;
+  top: -12px;
+  right: 24px;
+  background-color: var(--accent, #f59e0b);
+  color: #ffffff;
+  font-size: 0.74rem;
+  font-weight: 800;
+  padding: 3px 12px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  box-shadow: 0 4px 10px rgba(245, 158, 11, 0.35);
+}
+
+.tier-card-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--text-main, #0f172a);
+  margin-bottom: 12px;
+}
+
+.tier-price-box {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.tier-amount {
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: var(--primary, #047857);
+  line-height: 1;
+}
+
+.tier-freq {
+  font-size: 0.85rem;
+  color: var(--text-muted, #64748b);
+  font-weight: 600;
+}
+
+.tier-card-desc {
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: #475569;
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+
+.tier-impact {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-main, #1e293b);
+  margin-bottom: 24px;
+  background-color: #f1f5f9;
+  padding: 10px 12px;
+  border-radius: 8px;
+}
+
+.tier-check {
+  color: var(--primary, #047857);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.tier-action-btn {
+  width: 100%;
+}
+
+/* Selected Summary Bar */
+.selected-summary-bar {
+  background: linear-gradient(135deg, #064e3b 0%, #047857 100%);
+  color: #ffffff;
+  border-radius: var(--radius-lg, 16px);
+  padding: 24px 32px;
+  margin-top: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  box-shadow: 0 12px 28px -6px rgba(4, 120, 87, 0.3);
+}
+
+.summary-left {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.summary-lbl {
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.summary-name {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.summary-right {
+  display: flex;
+  gap: 14px;
+}
+
+/* Bank & Contact Grid */
+.bank-legal-section {
+  padding: 80px 0;
+  background-color: #ffffff;
+}
+
+.bank-legal-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.bank-details-card, .contact-form-card {
+  background-color: #ffffff;
+  border: 1px solid var(--border, #e2e8f0);
+  border-radius: var(--radius-lg, 16px);
+  padding: 40px;
+  box-shadow: 0 10px 30px -5px rgba(0,0,0,0.06);
+  display: flex;
+  flex-direction: column;
+}
+
+.card-header-styled {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border, #e2e8f0);
+}
+
+.bank-icon-h {
+  color: var(--primary, #047857);
+}
+
+.mail-icon-h {
+  color: var(--accent, #f59e0b);
+}
+
+.card-styled-title {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--text-main, #0f172a);
+}
+
+.bank-intro-text {
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: #475569;
+  margin-bottom: 24px;
+}
+
+.bank-info-table {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 14px;
+  background-color: #f8fafc;
+  border-radius: 8px;
+  font-size: 0.88rem;
+  gap: 14px;
+}
+
+.info-title {
+  font-weight: 600;
+  color: var(--text-muted, #64748b);
+  flex-shrink: 0;
+}
+
+.info-val {
+  font-weight: 700;
+  color: var(--text-main, #0f172a);
+  text-align: right;
+}
+
+.bank-notice-box {
+  background-color: rgba(4, 120, 87, 0.08);
+  border-left: 3px solid var(--primary, #047857);
+  padding: 14px 16px;
+  border-radius: 0 8px 8px 0;
+  display: flex;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.notice-icon {
+  color: var(--primary, #047857);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.notice-text {
+  font-size: 0.85rem;
+  line-height: 1.55;
+  color: #1e3a29;
+}
+
+/* Form Styles */
+.direct-contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.form-label {
+  font-size: 0.84rem;
+  font-weight: 700;
+  color: var(--text-main, #0f172a);
+}
+
+.form-input, .form-select, .form-textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--border, #cbd5e1);
+  border-radius: 8px;
+  font-size: 0.92rem;
+  color: var(--text-main, #0f172a);
+  font-family: inherit;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-input:focus, .form-select:focus, .form-textarea:focus {
+  outline: none;
+  border-color: var(--primary, #047857);
+  box-shadow: 0 0 0 3px rgba(4, 120, 87, 0.15);
+}
+
+.form-success-box {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.success-icon {
+  color: #10b981;
+  margin-bottom: 16px;
+}
+
+.success-title {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--text-main, #0f172a);
+  margin-bottom: 8px;
+}
+
+.success-desc {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #475569;
+  margin-bottom: 24px;
+}
+
+/* FAQ Section */
+.faq-section {
+  padding: 80px 0;
+  background-color: #f8fafc;
+}
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+  margin-top: 48px;
+}
+
+.faq-card {
+  background-color: #ffffff;
+  border: 1px solid var(--border, #e2e8f0);
+  border-radius: var(--radius-md, 12px);
+  padding: 28px;
+}
+
+.faq-q {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-main, #0f172a);
+  margin-bottom: 10px;
+}
+
+.faq-a {
+  font-size: 0.92rem;
+  line-height: 1.65;
+  color: var(--text-muted, #475569);
+}
+
+@media (max-width: 992px) {
+  .sponsorship-tiers-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .bank-legal-grid {
+    grid-template-columns: 1fr;
+  }
+  .selected-summary-bar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 640px) {
+  .sponsorship-tiers-grid {
+    grid-template-columns: 1fr;
+  }
+  .form-grid-2 {
+    grid-template-columns: 1fr;
+  }
+  .faq-grid {
+    grid-template-columns: 1fr;
+  }
+  .bank-details-card, .contact-form-card {
+    padding: 24px 18px;
+  }
+}

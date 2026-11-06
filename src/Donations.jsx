@@ -12,7 +12,8 @@ import {
   ChevronUp, 
   Sparkles,
   ExternalLink,
-  MessageSquare
+  MessageSquare,
+  ArrowRight
 } from "lucide-react";
 
 function Donations({ selectedProject }) {
@@ -221,6 +222,16 @@ function Donations({ selectedProject }) {
               </div>
             ))}
           </div>
+        </div>
+
+        <div style={{ textAlign: "center", marginTop: "40px" }}>
+          <a 
+            href="#/donate" 
+            className="btn btn-outline" 
+            style={{ display: "inline-flex", alignItems: "center", gap: "8px" }}
+          >
+            Visit Dedicated Sponsorship & Online Inquiry Page <ArrowRight size={16} />
+          </a>
         </div>
 
       </div>

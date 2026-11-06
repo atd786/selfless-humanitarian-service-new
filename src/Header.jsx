@@ -10,7 +10,7 @@ import {
   ExternalLink 
 } from "lucide-react";
 
-function Header({ onDonateClick }) {
+function Header({ currentPage = "home", onNavigate, onDonateClick }) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -27,22 +27,24 @@ function Header({ onDonateClick }) {
   }, []);
 
   const navLinks = [
-    { name: "About", href: "#about" },
-    { name: "Mission & Vision", href: "#mission" },
-    { name: "Our Projects", href: "#projects" },
-    { name: "Our History", href: "#history" },
-    { name: "Leadership", href: "#team" },
-    { name: "Gallery", href: "#gallery" },
-    { name: "Contact & Donate", href: "#donate" },
+    { name: "Home", key: "home", href: "#/" },
+    { name: "About Us", key: "about", href: "#/about" },
+    { name: "Mission & Vision", key: "mission", href: "#/mission" },
+    { name: "Our Projects", key: "projects", href: "#/projects" },
+    { name: "Our History", key: "history", href: "#/history" },
+    { name: "Leadership", key: "team", href: "#/team" },
+    { name: "Gallery", key: "gallery", href: "#/gallery" },
+    { name: "Contact & Donate", key: "donate", href: "#/donate" },
   ];
 
-  const handleNavClick = (e, href) => {
+  const handleNavClick = (e, key, href) => {
     e.preventDefault();
     setMobileMenuOpen(false);
-    const target = document.querySelector(href);
-    if (target) {
-      target.scrollIntoView({ behavior: "smooth" });
+    window.location.hash = href;
+    if (onNavigate) {
+      onNavigate(key);
     }
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
@@ -74,7 +76,11 @@ function Header({ onDonateClick }) {
       {/* Main Navbar */}
       <header className={`navbar ${isScrolled ? "navbar-scrolled" : ""}`}>
         <div className="container navbar-container">
-          <a href="#" className="nav-brand">
+          <a 
+            href="#/" 
+            className="nav-brand"
+            onClick={(e) => handleNavClick(e, "home", "#/")}
+          >
             <img src="./logo.png" alt="Selfless NGO Logo" className="nav-logo" />
             <div className="nav-brand-text">
               <span className="brand-title">Selfless</span>
@@ -86,10 +92,10 @@ function Header({ onDonateClick }) {
           <nav className="nav-desktop">
             {navLinks.map((link) => (
               <a
-                key={link.name}
+                key={link.key}
                 href={link.href}
-                className="nav-link"
-                onClick={(e) => handleNavClick(e, link.href)}
+                className={`nav-link ${currentPage === link.key ? "active" : ""}`}
+                onClick={(e) => handleNavClick(e, link.key, link.href)}
               >
                 {link.name}
               </a>
@@ -118,10 +124,10 @@ function Header({ onDonateClick }) {
             <div className="container mobile-drawer-content">
               {navLinks.map((link) => (
                 <a
-                  key={link.name}
+                  key={link.key}
                   href={link.href}
-                  className="mobile-nav-link"
-                  onClick={(e) => handleNavClick(e, link.href)}
+                  className={`mobile-nav-link ${currentPage === link.key ? "active" : ""}`}
+                  onClick={(e) => handleNavClick(e, link.key, link.href)}
                 >
                   {link.name}
                 </a>

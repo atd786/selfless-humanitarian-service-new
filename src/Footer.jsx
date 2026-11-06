@@ -9,8 +9,17 @@ import {
   Mail
 } from "lucide-react";
 
-function Footer() {
+function Footer({ onNavigate }) {
   const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const handleLink = (e, pageKey, hash) => {
+    e.preventDefault();
+    window.location.hash = hash;
+    if (onNavigate) {
+      onNavigate(pageKey);
+    }
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
@@ -19,7 +28,7 @@ function Footer() {
       <div className="container footer-content-grid">
         {/* Brand Column */}
         <div className="footer-col footer-col-brand">
-          <div className="footer-brand">
+          <div className="footer-brand" onClick={(e) => handleLink(e, "home", "#/")} style={{ cursor: "pointer" }}>
             <img src="./logo.png" alt="Selfless NGO Logo" className="footer-logo" />
             <div>
               <span className="footer-brand-name">Selfless</span>
@@ -36,30 +45,31 @@ function Footer() {
           </div>
         </div>
 
-        {/* Quick Links Column */}
+        {/* Dedicated Pages Navigation Column */}
         <div className="footer-col">
-          <h4 className="footer-col-title">Navigation</h4>
+          <h4 className="footer-col-title">Pages & Overview</h4>
           <ul className="footer-links">
-            <li><a href="#about">About Our NGO</a></li>
-            <li><a href="#mission">Mission & Vision</a></li>
-            <li><a href="#projects">Envisioned Projects</a></li>
-            <li><a href="#history">Our 2015 History</a></li>
-            <li><a href="#team">Board of Directors</a></li>
-            <li><a href="#gallery">Photo Gallery</a></li>
-            <li><a href="#donate">Donations & Support</a></li>
+            <li><a href="#/" onClick={(e) => handleLink(e, "home", "#/")}>Home Page</a></li>
+            <li><a href="#/about" onClick={(e) => handleLink(e, "about", "#/about")}>About Our NGO</a></li>
+            <li><a href="#/mission" onClick={(e) => handleLink(e, "mission", "#/mission")}>Mission & Vision</a></li>
+            <li><a href="#/projects" onClick={(e) => handleLink(e, "projects", "#/projects")}>Our Projects</a></li>
+            <li><a href="#/history" onClick={(e) => handleLink(e, "history", "#/history")}>Our 10-Year History</a></li>
+            <li><a href="#/team" onClick={(e) => handleLink(e, "team", "#/team")}>Board of Directors</a></li>
+            <li><a href="#/gallery" onClick={(e) => handleLink(e, "gallery", "#/gallery")}>Campus Photo Gallery</a></li>
+            <li><a href="#/donate" onClick={(e) => handleLink(e, "donate", "#/donate")}>Contact & Donate</a></li>
           </ul>
         </div>
 
-        {/* Projects Column */}
+        {/* Key Initiatives Column */}
         <div className="footer-col">
           <h4 className="footer-col-title">Key Initiatives</h4>
           <ul className="footer-links">
-            <li><a href="#projects">Free Elementary School (KG–5)</a></li>
-            <li><a href="#projects">High School Expansion</a></li>
-            <li><a href="#projects">Evening Academic Tutoring</a></li>
-            <li><a href="#projects">Technical Training Institute</a></li>
-            <li><a href="#projects">Daily Student Meal Program</a></li>
-            <li><a href="#donate">Sponsor A Child</a></li>
+            <li><a href="#/projects" onClick={(e) => handleLink(e, "projects", "#/projects")}>Free Elementary School (KG–5)</a></li>
+            <li><a href="#/projects" onClick={(e) => handleLink(e, "projects", "#/projects")}>High School Expansion (Grades 6–10)</a></li>
+            <li><a href="#/projects" onClick={(e) => handleLink(e, "projects", "#/projects")}>Technical Training Institute (6 Courses)</a></li>
+            <li><a href="#/projects" onClick={(e) => handleLink(e, "projects", "#/projects")}>Daily Student Nutrition Care</a></li>
+            <li><a href="#/donate" onClick={(e) => handleLink(e, "donate", "#/donate")}>Sponsor A Child ($25/mo)</a></li>
+            <li><a href="#/donate" onClick={(e) => handleLink(e, "donate", "#/donate")}>Vocational Lab Seat ($350)</a></li>
           </ul>
         </div>
 
@@ -99,7 +109,7 @@ function Footer() {
             onClick={scrollToTop}
             aria-label="Scroll back to top"
           >
-            <span>Back to top</span> <ArrowUp size={16} />
+            Back to Top <ArrowUp size={16} />
           </button>
         </div>
       </div>

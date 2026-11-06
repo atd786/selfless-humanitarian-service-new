@@ -219,6 +219,16 @@ function Project({ onDonateClick }) {
           </div>
         </div>
 
+        <div style={{ textAlign: "center", marginTop: "44px" }}>
+          <a 
+            href="#/projects" 
+            className="btn btn-primary" 
+            style={{ display: "inline-flex", alignItems: "center", gap: "8px", padding: "12px 28px" }}
+          >
+            View Full Projects, High School Specs & Vocational Syllabi <ArrowRight size={16} />
+          </a>
+        </div>
+
       </div>
     </section>
   );

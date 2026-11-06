@@ -1,6 +1,6 @@
 import React from "react";
 import "./Team.css";
-import { Users, Award, GraduationCap, ShieldCheck, HeartHandshake } from "lucide-react";
+import { Users, Award, GraduationCap, ShieldCheck, HeartHandshake, ArrowRight } from "lucide-react";
 
 function Team() {
   const team = [
@@ -75,6 +75,16 @@ function Team() {
               contributions directly support student education, daily meals, uniforms, and classroom facilities.
             </p>
           </div>
+        </div>
+
+        <div style={{ textAlign: "center", marginTop: "36px" }}>
+          <a 
+            href="#/team" 
+            className="btn btn-outline" 
+            style={{ display: "inline-flex", alignItems: "center", gap: "8px" }}
+          >
+            Read Full In-Depth Leadership Profiles & Letters <ArrowRight size={16} />
+          </a>
         </div>
       </div>
     </section>

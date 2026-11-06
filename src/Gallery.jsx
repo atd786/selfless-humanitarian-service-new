@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Gallery.css";
-import { Image, X, ZoomIn, Sparkles } from "lucide-react";
+import { Image, X, ZoomIn, Sparkles, ArrowRight } from "lucide-react";
 
 const galleryImages = [
   {
@@ -107,6 +107,16 @@ function Gallery() {
               </div>
             </div>
           ))}
+        </div>
+
+        <div style={{ textAlign: "center", marginTop: "40px" }}>
+          <a 
+            href="#/gallery" 
+            className="btn btn-outline" 
+            style={{ display: "inline-flex", alignItems: "center", gap: "8px" }}
+          >
+            View Full Campus Photo Gallery & Exhibition <ArrowRight size={16} />
+          </a>
         </div>
 
         {/* Lightbox Modal */}

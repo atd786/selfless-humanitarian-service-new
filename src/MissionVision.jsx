@@ -7,7 +7,8 @@ import {
   GraduationCap, 
   Cpu, 
   HeartHandshake, 
-  Sparkles 
+  Sparkles,
+  ArrowRight
 } from "lucide-react";
 
 function MissionVision() {
@@ -128,6 +129,16 @@ function MissionVision() {
               <p>Practical 2–6 month certified short courses in high demand</p>
             </div>
           </div>
+        </div>
+
+        <div style={{ textAlign: "center", marginTop: "36px" }}>
+          <a 
+            href="#/mission" 
+            className="btn btn-outline" 
+            style={{ display: "inline-flex", alignItems: "center", gap: "8px" }}
+          >
+            Explore Full Mission & 2026–2030 Roadmap <ArrowRight size={16} />
+          </a>
         </div>
       </div>
     </section>

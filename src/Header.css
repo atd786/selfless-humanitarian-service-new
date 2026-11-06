@@ -114,15 +114,17 @@
 .nav-desktop {
   display: flex;
   align-items: center;
-  gap: 24px;
+  gap: 18px;
 }
 
 .nav-link {
-  font-size: 0.95rem;
+  font-size: 0.92rem;
   font-weight: 600;
   color: var(--text-dark);
   padding: 6px 0;
   position: relative;
+  text-decoration: none;
+  transition: color 0.2s ease;
 }
 
 .nav-link::after {
@@ -136,12 +138,19 @@
   transition: width 0.25s ease;
 }
 
-.nav-link:hover {
+.nav-link:hover,
+.nav-link.active {
   color: var(--primary);
 }
 
-.nav-link:hover::after {
+.nav-link:hover::after,
+.nav-link.active::after {
   width: 100%;
+}
+
+.mobile-nav-link.active {
+  color: var(--primary);
+  font-weight: 700;
 }
 
 .nav-donate-btn {

@@ -7,7 +7,8 @@ import {
   Sparkles, 
   GraduationCap, 
   ShieldCheck, 
-  Quote 
+  Quote,
+  ArrowRight
 } from "lucide-react";
 
 function History() {
@@ -87,6 +88,16 @@ function History() {
               </div>
             ))}
           </div>
+        </div>
+
+        <div style={{ textAlign: "center", marginTop: "36px" }}>
+          <a 
+            href="#/history" 
+            className="btn btn-outline" 
+            style={{ display: "inline-flex", alignItems: "center", gap: "8px" }}
+          >
+            Read Our Complete 10-Year History & Milestones <ArrowRight size={16} />
+          </a>
         </div>
       </div>
     </section>
