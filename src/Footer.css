@@ -157,14 +157,22 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  color: #94a3b8;
+  color: #cbd5e1;
   font-size: 0.85rem;
-  font-weight: 600;
-  transition: color 0.2s;
+  font-weight: 700;
+  padding: 8px 16px;
+  border-radius: 30px;
+  background-color: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .back-to-top-btn:hover {
   color: #ffffff;
+  background-color: var(--primary);
+  border-color: var(--primary);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(136, 0, 21, 0.3);
 }
 
 @media (max-width: 1024px) {

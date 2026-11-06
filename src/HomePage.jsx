@@ -9,7 +9,7 @@ import Donations from "./Donations";
 
 function HomePage({ onDonateClick, selectedCause }) {
   return (
-    <>
+    <div className="home-page">
       <Hero onDonateClick={() => onDonateClick("General Educational Fund")} />
       <MissionVision />
       <Project onDonateClick={onDonateClick} />
@@ -17,7 +17,7 @@ function HomePage({ onDonateClick, selectedCause }) {
       <Team />
       <Gallery />
       <Donations selectedProject={selectedCause} />
-    </>
+    </div>
   );
 }
 

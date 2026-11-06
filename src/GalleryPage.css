@@ -1,11 +1,11 @@
 /* GalleryPage.css */
 
 .gallery-page {
-  animation: fadeInPage 0.4s ease;
+  animation: fadeInPage 0.45s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .gallery-exhibition-section {
-  padding: 60px 0 80px;
+  padding: 72px 0 88px;
   background-color: #f8fafc;
 }
 
@@ -20,27 +20,29 @@
 
 .gallery-filter-pill {
   background-color: #ffffff;
-  color: var(--text-main, #0f172a);
+  color: var(--text-dark, #0f172a);
   border: 1px solid var(--border, #cbd5e1);
   padding: 9px 20px;
   border-radius: 30px;
   font-size: 0.88rem;
-  font-weight: 600;
+  font-weight: 700;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   box-shadow: 0 1px 3px rgba(0,0,0,0.04);
 }
 
 .gallery-filter-pill:hover {
-  border-color: var(--primary, #047857);
-  color: var(--primary, #047857);
+  border-color: var(--primary, #880015);
+  color: var(--primary, #880015);
+  transform: translateY(-1px);
 }
 
 .gallery-filter-pill.active {
-  background-color: var(--primary, #047857);
+  background: linear-gradient(135deg, var(--primary, #880015), #5c0511);
   color: #ffffff;
-  border-color: var(--primary, #047857);
-  box-shadow: 0 4px 12px rgba(4, 120, 87, 0.25);
+  border-color: var(--primary, #880015);
+  box-shadow: 0 4px 14px rgba(136, 0, 21, 0.3);
+  transform: translateY(-1px);
 }
 
 .gallery-masonry-grid {
@@ -56,19 +58,20 @@
   overflow: hidden;
   box-shadow: 0 8px 24px -4px rgba(0,0,0,0.06);
   cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease;
   display: flex;
   flex-direction: column;
 }
 
 .gallery-item-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 16px 36px -6px rgba(0,0,0,0.12);
+  box-shadow: 0 18px 40px -6px rgba(0,0,0,0.12);
+  border-color: rgba(136, 0, 21, 0.3);
 }
 
 .gallery-card-img-wrap {
   position: relative;
-  height: 240px;
+  height: 250px;
   overflow: hidden;
   background-color: #e2e8f0;
 }
@@ -77,23 +80,23 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.5s ease;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .gallery-item-card:hover .gallery-card-img {
-  transform: scale(1.05);
+  transform: scale(1.06);
 }
 
 .gallery-card-overlay {
   position: absolute;
   inset: 0;
-  background-color: rgba(4, 120, 87, 0.65);
+  background: linear-gradient(135deg, rgba(136, 0, 21, 0.78), rgba(217, 119, 6, 0.75));
   display: flex;
   align-items: center;
   justify-content: center;
   opacity: 0;
   transition: opacity 0.3s ease;
-  backdrop-filter: blur(2px);
+  backdrop-filter: blur(3px);
 }
 
 .gallery-item-card:hover .gallery-card-overlay {
@@ -107,13 +110,23 @@
   display: flex;
   align-items: center;
   gap: 8px;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 8px 16px;
+  border-radius: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  transform: translateY(6px);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.gallery-item-card:hover .overlay-zoom-btn {
+  transform: translateY(0);
 }
 
 .gallery-cat-badge {
   position: absolute;
   top: 14px;
   left: 14px;
-  background-color: rgba(15, 23, 42, 0.82);
+  background-color: rgba(15, 23, 42, 0.85);
   color: #ffffff;
   font-size: 0.74rem;
   font-weight: 700;
@@ -121,10 +134,11 @@
   border-radius: 6px;
   backdrop-filter: blur(4px);
   z-index: 2;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
 }
 
 .gallery-card-body {
-  padding: 22px;
+  padding: 24px;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
@@ -135,15 +149,15 @@
   align-items: center;
   gap: 5px;
   font-size: 0.78rem;
-  font-weight: 600;
-  color: var(--text-muted, #64748b);
+  font-weight: 700;
+  color: var(--primary, #880015);
   margin-bottom: 8px;
 }
 
 .gallery-card-title {
   font-size: 1.15rem;
   font-weight: 800;
-  color: var(--text-main, #0f172a);
+  color: var(--text-dark, #0f172a);
   margin-bottom: 8px;
   line-height: 1.35;
 }
@@ -156,7 +170,7 @@
 
 /* Campus Visit Invitation Section */
 .visit-invite-section {
-  padding: 80px 0;
+  padding: 88px 0;
   background-color: #ffffff;
 }
 
@@ -173,9 +187,9 @@
 
 .visit-tag {
   display: inline-block;
-  padding: 4px 12px;
-  background-color: rgba(4, 120, 87, 0.1);
-  color: var(--primary, #047857);
+  padding: 4px 14px;
+  background-color: var(--primary-subtle, #fdf2f4);
+  color: var(--primary, #880015);
   font-size: 0.8rem;
   font-weight: 700;
   border-radius: 20px;
@@ -183,9 +197,9 @@
 }
 
 .visit-title {
-  font-size: 2rem;
+  font-size: clamp(1.8rem, 3.5vw, 2.2rem);
   font-weight: 800;
-  color: var(--text-main, #0f172a);
+  color: var(--text-dark, #0f172a);
   margin-bottom: 14px;
 }
 
@@ -212,7 +226,13 @@
   background-color: #ffffff;
   border: 1px solid var(--border, #e2e8f0);
   border-radius: var(--radius-md, 12px);
-  padding: 20px;
+  padding: 22px;
+  transition: transform 0.25s ease;
+}
+
+.visit-info-box:hover {
+  transform: translateY(-2px);
+  border-color: rgba(136, 0, 21, 0.25);
 }
 
 .box-title {
@@ -221,7 +241,7 @@
   gap: 8px;
   font-size: 0.95rem;
   font-weight: 700;
-  color: var(--primary, #047857);
+  color: var(--primary, #880015);
   margin-bottom: 6px;
 }
 
@@ -242,32 +262,43 @@
   justify-content: center;
   padding: 30px;
   animation: fadeInModal 0.25s ease;
+  backdrop-filter: blur(12px);
+}
+
+@keyframes fadeInModal {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 .lightbox-close-btn {
   position: absolute;
   top: 24px;
   right: 28px;
-  background: none;
-  border: none;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   color: #ffffff;
   cursor: pointer;
   padding: 8px;
-  transition: transform 0.2s;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s, background-color 0.2s;
   z-index: 3010;
 }
 
 .lightbox-close-btn:hover {
-  transform: scale(1.15);
-  color: var(--accent, #f59e0b);
+  transform: scale(1.1);
+  background-color: rgba(136, 0, 21, 0.8);
+  color: #ffffff;
 }
 
 .lightbox-nav-btn {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background-color: rgba(255, 255, 255, 0.12);
-  border: none;
+  background-color: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.25);
   color: #ffffff;
   width: 54px;
   height: 54px;
@@ -281,7 +312,7 @@
 }
 
 .lightbox-nav-btn:hover {
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.35);
   transform: translateY(-50%) scale(1.08);
 }
 
@@ -294,7 +325,7 @@
 }
 
 .lightbox-content-wrap {
-  max-width: 900px;
+  max-width: 920px;
   width: 100%;
   max-height: 88vh;
   display: flex;
@@ -303,6 +334,18 @@
   border-radius: var(--radius-lg, 16px);
   overflow: hidden;
   box-shadow: 0 25px 60px -15px rgba(0,0,0,0.7);
+  animation: scaleInLightbox 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes scaleInLightbox {
+  from {
+    transform: scale(0.92) translateY(14px);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
 }
 
 .lightbox-main-img {
@@ -313,7 +356,7 @@
 }
 
 .lightbox-caption-bar {
-  padding: 20px 24px;
+  padding: 22px 26px;
   background-color: #0f172a;
   color: #ffffff;
   display: flex;
@@ -324,8 +367,8 @@
 
 .lightbox-cat {
   display: inline-block;
-  padding: 3px 8px;
-  background-color: var(--primary, #047857);
+  padding: 3px 10px;
+  background: linear-gradient(135deg, var(--primary, #880015), #5c0511);
   color: #ffffff;
   font-size: 0.72rem;
   font-weight: 700;
@@ -370,15 +413,23 @@
   }
   .prev-btn {
     left: 10px;
+    width: 44px;
+    height: 44px;
   }
   .next-btn {
     right: 10px;
+    width: 44px;
+    height: 44px;
   }
   .lightbox-backdrop {
-    padding: 10px;
+    padding: 12px;
   }
   .lightbox-caption-bar {
     flex-direction: column;
     gap: 8px;
+    padding: 16px 20px;
+  }
+  .visit-invite-card {
+    padding: 28px 18px;
   }
 }
