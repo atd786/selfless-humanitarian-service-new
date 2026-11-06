@@ -1,0 +1,36 @@
+.mission-vision {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+.box {
+  flex: 1;
+  min-width: 300px;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.box h2 {
+  margin-bottom: 10px;
+  color: #880015;
+  font-size: 1.5rem;
+}
+
+.box p {
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Responsive layout for small screens */
+@media (max-width: 768px) {
+  .mission-vision {
+    flex-direction: column;
+  }
+}

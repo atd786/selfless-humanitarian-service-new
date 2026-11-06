@@ -1,0 +1,42 @@
+.project-section {
+  margin: 0,20px;
+  padding: 20px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.project-box {
+  max-width: 900px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  padding: 30px;
+  margin: 0, 20px;
+}
+
+.project-title {
+  color: #880015;   /* requested title color */
+  font-size: 1.6rem;
+  margin-top:0;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.project-box p {
+  color: #333;
+  line-height: 1.6;
+  font-size: 1rem;
+  text-align: justify;
+  margin-bottom: 15px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .project-box {
+    padding: 20px;
+  }
+
+  .project-title {
+    font-size: 1.4rem;
+  }
+}

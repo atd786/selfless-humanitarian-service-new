@@ -1,0 +1,46 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 10px 20px;
+  background-color: #f5f5f5;
+  flex-wrap: wrap; /* makes it responsive */
+}
+
+.logo {
+  width: 100px;
+  margin-right: 20px; /* adequate spacing between logo and title */
+}
+
+.logo img {
+  max-width: 100%;
+  height: auto;
+}
+
+.title {
+  flex: 1; /* takes remaining space */
+  text-align: center;
+  color:#880015;
+}
+
+.title h1 {
+  margin: 0;
+  color:#880015;
+}
+
+/* Responsive behavior for smaller screens */
+@media (max-width: 600px) {
+  .header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .logo {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .title {
+    flex: none;
+  }
+}
