@@ -316,9 +316,15 @@
   }
   .director-media-col {
     align-items: center;
+    width: 100%;
+  }
+  .director-image-wrapper {
+    width: 100%;
+    max-width: 320px;
   }
   .director-credential-box {
     width: 100%;
+    max-width: 340px;
   }
   .gov-grid {
     grid-template-columns: 1fr;

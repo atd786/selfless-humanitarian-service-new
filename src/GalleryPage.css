@@ -407,6 +407,26 @@
   }
 }
 
+@media (max-width: 768px) {
+  .gallery-filter-strip {
+    justify-content: flex-start;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    flex-wrap: nowrap;
+    padding: 4px 6px 12px;
+    margin-bottom: 28px;
+    scrollbar-width: none;
+  }
+  .gallery-filter-strip::-webkit-scrollbar {
+    display: none;
+  }
+  .gallery-filter-pill {
+    flex-shrink: 0;
+    padding: 8px 16px;
+    font-size: 0.84rem;
+  }
+}
+
 @media (max-width: 640px) {
   .gallery-masonry-grid {
     grid-template-columns: 1fr;

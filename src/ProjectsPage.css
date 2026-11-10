@@ -641,7 +641,35 @@
     gap: 36px;
   }
   .courses-tab-bar {
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding: 12px;
+    gap: 10px;
+    background-color: #f1f5f9;
+  }
+  .courses-tab-bar::-webkit-scrollbar {
+    display: none;
+  }
+  .course-tab-btn {
+    flex: 0 0 auto;
+    min-width: 170px;
+    max-width: 220px;
+    padding: 12px 14px;
+    border: 1px solid var(--border, #e2e8f0);
+    border-radius: 12px;
+    background-color: #ffffff;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  }
+  .course-tab-btn.active {
+    background: linear-gradient(135deg, var(--primary, #880015), #5c0511);
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(136, 0, 21, 0.3);
+    border-color: var(--primary, #880015);
+  }
+  .course-tab-btn.active .tab-icon {
+    color: #fef08a;
   }
   .course-curriculum-grid {
     grid-template-columns: 1fr;
@@ -652,9 +680,6 @@
 }
 
 @media (max-width: 640px) {
-  .courses-tab-bar {
-    grid-template-columns: repeat(2, 1fr);
-  }
   .pillar-highlights-grid {
     grid-template-columns: 1fr;
   }
@@ -666,9 +691,15 @@
     gap: 16px;
   }
   .course-detail-view {
-    padding: 24px 18px;
+    padding: 24px 16px;
   }
   .multiplier-card {
-    padding: 36px 20px;
+    padding: 36px 18px;
+  }
+  .course-title {
+    font-size: 1.4rem;
+  }
+  .project-photo {
+    height: 220px;
   }
 }

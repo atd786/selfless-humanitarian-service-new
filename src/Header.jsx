@@ -120,29 +120,37 @@ function Header({ currentPage = "home", onNavigate, onDonateClick }) {
 
         {/* Mobile Navigation Drawer */}
         {mobileMenuOpen && (
-          <div className="mobile-drawer">
-            <div className="container mobile-drawer-content">
-              {navLinks.map((link) => (
-                <a
-                  key={link.key}
-                  href={link.href}
-                  className={`mobile-nav-link ${currentPage === link.key ? "active" : ""}`}
-                  onClick={(e) => handleNavClick(e, link.key, link.href)}
+          <>
+            <div 
+              className="mobile-backdrop" 
+              onClick={() => setMobileMenuOpen(false)} 
+              aria-hidden="true"
+            />
+            <div className="mobile-drawer">
+              <div className="container mobile-drawer-content">
+                {navLinks.map((link) => (
+                  <a
+                    key={link.key}
+                    href={link.href}
+                    className={`mobile-nav-link ${currentPage === link.key ? "active" : ""}`}
+                    onClick={(e) => handleNavClick(e, link.key, link.href)}
+                  >
+                    <span>{link.name}</span>
+                    <span className="mobile-nav-arrow">→</span>
+                  </a>
+                ))}
+                <button 
+                  className="btn btn-primary mobile-donate-btn"
+                  onClick={() => {
+                    setMobileMenuOpen(false);
+                    onDonateClick();
+                  }}
                 >
-                  {link.name}
-                </a>
-              ))}
-              <button 
-                className="btn btn-primary mobile-donate-btn"
-                onClick={() => {
-                  setMobileMenuOpen(false);
-                  onDonateClick();
-                }}
-              >
-                <Heart size={18} fill="currentColor" /> Support Our Projects
-              </button>
+                  <Heart size={18} fill="currentColor" /> Support Our Projects
+                </button>
+              </div>
             </div>
-          </div>
+          </>
         )}
       </header>
     </>
