@@ -58,9 +58,10 @@ if (empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
 }
 
 try {
+    $createdAt = date('Y-m-d H:i:s');
     $stmt = $pdo->prepare("
-        INSERT INTO `submissions` (`name`, `email`, `phone`, `subject`, `tier_or_amount`, `message`, `status`, `ip_address`, `created_at`)
-        VALUES (:name, :email, :phone, :subject, :tier_or_amount, :message, 'New', :ip, NOW())
+        INSERT INTO submissions (name, email, phone, subject, tier_or_amount, message, status, ip_address, created_at)
+        VALUES (:name, :email, :phone, :subject, :tier_or_amount, :message, 'New', :ip, :created_at)
     ");
 
     $stmt->execute([
@@ -71,6 +72,7 @@ try {
         ':tier_or_amount' => $tier_or_amount,
         ':message'        => $message,
         ':ip'             => $ip_address,
+        ':created_at'     => $createdAt,
     ]);
 
     $insertId = $pdo->lastInsertId();
@@ -84,5 +86,9 @@ try {
 } catch (Exception $e) {
     error_log("Insert Submission Error: " . $e->getMessage());
     http_response_code(500);
-    echo json_encode(['success' => false, 'error' => 'Failed to save submission. Please try again.']);
+    echo json_encode([
+        'success' => false,
+        'error' => 'Failed to save submission. Please try again.',
+        'debug' => $e->getMessage()
+    ]);
 }
