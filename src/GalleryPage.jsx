@@ -81,7 +81,7 @@ const allPhotos = [
   },
   {
     id: 8,
-    src: "./hero-bg.png",
+    src: "./image 2.png",
     title: "Classroom Interactive Activity",
     category: "welfare",
     categoryLabel: "Welfare & Supplies",

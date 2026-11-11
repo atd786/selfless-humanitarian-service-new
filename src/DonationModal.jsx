@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./DonationModal.css";
-import { X, Heart, MessageSquare, Copy, Check, ShieldCheck, MapPin } from "lucide-react";
+import { X, Heart, MessageSquare, Copy, Check, ShieldCheck, MapPin, Mail } from "lucide-react";
 
 function DonationModal({ isOpen, onClose, defaultProject = "" }) {
   if (!isOpen) return null;
@@ -64,6 +64,9 @@ function DonationModal({ isOpen, onClose, defaultProject = "" }) {
               <span className="coord-label">Coordinating Director:</span>
               <strong className="coord-name">Dr. Khushro Shahookar (Ph.D., USA)</strong>
               <span className="coord-phone">{displayPhone}</span>
+              <span className="coord-email">
+                <Mail size={13} /> donate@selflesshumanitarianservice.com
+              </span>
             </div>
 
             <div className="modal-action-buttons">

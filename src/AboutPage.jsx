@@ -182,7 +182,7 @@ function AboutPage({ onNavigate, onDonateClick }) {
           <div className="about-cta-box">
             <h3 className="cta-heading">Want to See Our Work Firsthand?</h3>
             <p className="cta-text">
-              We welcome donors, educationists, and volunteers to visit our school campus in Shahdara, Lahore.
+              We welcome donors, educationists, and volunteers to visit our school campus in Shahdara, Lahore. For institutional inquiries, write to us at <a href="mailto:info@selflesshumanitarianservice.com" style={{ color: "var(--accent)", textDecoration: "underline" }}>info@selflesshumanitarianservice.com</a>.
             </p>
             <div className="cta-actions">
               <button className="btn btn-accent" onClick={onDonateClick}>

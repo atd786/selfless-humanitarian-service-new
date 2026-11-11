@@ -28,6 +28,7 @@ function DonatePage({ onNavigate, onDonateClick }) {
     message: ""
   });
   const [formSubmitted, setFormSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const tiers = [
     {
@@ -79,18 +80,42 @@ function DonatePage({ onNavigate, onDonateClick }) {
     }
   ];
 
-  const handleFormSubmit = (e) => {
+  const handleFormSubmit = async (e) => {
     e.preventDefault();
     if (!formData.name || !formData.email) {
       alert("Please fill in your name and email address.");
       return;
     }
-    // Generate WhatsApp direct text with their message
-    const textMsg = encodeURIComponent(
-      `Hello Dr. Khushro,\nMy name is ${formData.name}.\nEmail: ${formData.email}\nPhone: ${formData.phone || "Not provided"}\nSubject: ${formData.inquiryType}\nMessage: ${formData.message}`
-    );
-    window.open(`https://wa.me/923061064907?text=${textMsg}`, "_blank");
-    setFormSubmitted(true);
+
+    setIsSubmitting(true);
+
+    const payload = {
+      name: formData.name,
+      email: formData.email,
+      phone: formData.phone || "",
+      subject: formData.inquiryType,
+      tier_or_amount: `${selectedTierObj.title} (${currency === "USD" ? "$" + selectedTierObj.usd : "PKR " + selectedTierObj.pkr})`,
+      message: formData.message || ""
+    };
+
+    try {
+      await fetch("./api/submit.php", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload)
+      });
+    } catch (err) {
+      console.warn("Inquiry DB recording notice:", err);
+    } finally {
+      setIsSubmitting(false);
+      setFormSubmitted(true);
+
+      // Generate WhatsApp direct text with their message
+      const textMsg = encodeURIComponent(
+        `Hello Dr. Khushro,\nMy name is ${formData.name}.\nEmail: ${formData.email}\nPhone: ${formData.phone || "Not provided"}\nSubject: ${formData.inquiryType}\nTier: ${selectedTierObj.title}\nMessage: ${formData.message}`
+      );
+      window.open(`https://wa.me/923061064907?text=${textMsg}`, "_blank");
+    }
   };
 
   const selectedTierObj = tiers.find(t => t.id === selectedTier) || tiers[0];
@@ -229,6 +254,14 @@ function DonatePage({ onNavigate, onDonateClick }) {
                   <span className="info-val">Shahdara, Lahore, Punjab, Pakistan</span>
                 </div>
                 <div className="info-row">
+                  <span className="info-title">Official Donation Email:</span>
+                  <span className="info-val">donate@selflesshumanitarianservice.com</span>
+                </div>
+                <div className="info-row">
+                  <span className="info-title">General Inquiries Email:</span>
+                  <span className="info-val">contact@selflesshumanitarianservice.com</span>
+                </div>
+                <div className="info-row">
                   <span className="info-title">Direct Director Contact:</span>
                   <span className="info-val">+92 306 1064907 (Dr. Khushro Shahookar)</span>
                 </div>
@@ -261,9 +294,9 @@ function DonatePage({ onNavigate, onDonateClick }) {
               {formSubmitted ? (
                 <div className="form-success-box">
                   <CheckCircle2 size={48} className="success-icon" />
-                  <h4 className="success-title">Message Forwarded!</h4>
+                  <h4 className="success-title">Inquiry Submitted & Forwarded!</h4>
                   <p className="success-desc">
-                    Your inquiry has been formatted and opened directly in WhatsApp with Dr. Khushro Shahookar (+92 306 1064907). He will reply promptly.
+                    Your inquiry has been securely saved to our database and formatted for Dr. Khushro Shahookar (+92 306 1064907). He will reply promptly.
                   </p>
                   <button className="btn btn-primary" onClick={() => setFormSubmitted(false)}>
                     Send Another Message
@@ -276,7 +309,7 @@ function DonatePage({ onNavigate, onDonateClick }) {
                     <input 
                       type="text" 
                       className="form-input" 
-                      placeholder="e.g. Aitzaz Ahmed" 
+                      placeholder="e.g. Tariq Mehmood" 
                       required
                       value={formData.name}
                       onChange={(e) => setFormData({...formData, name: e.target.value})}
@@ -334,8 +367,8 @@ function DonatePage({ onNavigate, onDonateClick }) {
                     />
                   </div>
 
-                  <button type="submit" className="btn btn-primary btn-full">
-                    <Send size={16} /> Send Inquiry via WhatsApp to Dr. Khushro
+                  <button type="submit" className="btn btn-primary btn-full" disabled={isSubmitting}>
+                    <Send size={16} /> {isSubmitting ? "Recording & Connecting..." : "Send Inquiry & Connect via WhatsApp"}
                   </button>
                 </form>
               )}

@@ -94,6 +94,21 @@ function Footer({ onNavigate }) {
               <ShieldCheck size={18} className="footer-contact-icon" />
               <span>Dr. Khushro Shahookar (Founder & Director)</span>
             </li>
+            <li>
+              <Mail size={18} className="footer-contact-icon" />
+              <span>
+                <strong>Official Inquiries:</strong><br />
+                <a href="mailto:info@selflesshumanitarianservice.com">info@selflesshumanitarianservice.com</a><br />
+                <a href="mailto:contact@selflesshumanitarianservice.com">contact@selflesshumanitarianservice.com</a>
+              </span>
+            </li>
+            <li>
+              <Mail size={18} className="footer-contact-icon" />
+              <span>
+                <strong>Donation Verification:</strong><br />
+                <a href="mailto:donate@selflesshumanitarianservice.com">donate@selflesshumanitarianservice.com</a>
+              </span>
+            </li>
           </ul>
         </div>
       </div>
