@@ -80,7 +80,7 @@ function Team() {
         <div style={{ textAlign: "center", marginTop: "36px" }}>
           <a 
             href="#/team" 
-            className="btn btn-outline" 
+            className="btn btn-outline-crimson btn-shimmer" 
             style={{ display: "inline-flex", alignItems: "center", gap: "8px" }}
           >
             Read Full In-Depth Leadership Profiles & Letters <ArrowRight size={16} />

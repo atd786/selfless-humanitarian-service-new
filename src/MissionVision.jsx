@@ -134,7 +134,7 @@ function MissionVision() {
         <div style={{ textAlign: "center", marginTop: "36px" }}>
           <a 
             href="#/mission" 
-            className="btn btn-outline" 
+            className="btn btn-outline-crimson btn-shimmer" 
             style={{ display: "inline-flex", alignItems: "center", gap: "8px" }}
           >
             Explore Full Mission & 2026–2030 Roadmap <ArrowRight size={16} />

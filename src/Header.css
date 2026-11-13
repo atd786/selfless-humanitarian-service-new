@@ -48,6 +48,45 @@
   white-space: nowrap;
 }
 
+.live-pulse-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #4ade80;
+  box-shadow: 0 0 0 rgba(74, 222, 128, 0.7);
+  animation: livePulse 2s infinite;
+  display: inline-block;
+}
+
+@keyframes livePulse {
+  0% { box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.75); }
+  70% { box-shadow: 0 0 0 7px rgba(74, 222, 128, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(74, 222, 128, 0); }
+}
+
+.top-bar-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.top-email-link {
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 500;
+  font-size: 0.78rem;
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.top-email-link:hover {
+  background: rgba(255, 255, 255, 0.18);
+  color: #ffffff;
+}
+
 .top-contact {
   display: inline-flex;
   align-items: center;
@@ -150,33 +189,42 @@
   font-size: 0.88rem;
   font-weight: 600;
   color: var(--text-dark);
-  padding: 8px 6px;
+  padding: 7px 11px;
+  border-radius: var(--radius-full);
   position: relative;
   text-decoration: none;
-  transition: color 0.2s ease;
+  transition: all 0.2s ease;
   white-space: nowrap;
 }
 
 .nav-link::after {
   content: '';
   position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 2.5px;
+  bottom: 2px;
+  left: 12px;
+  right: 12px;
+  width: auto;
+  height: 2px;
+  transform: scaleX(0);
   background: linear-gradient(90deg, var(--primary), var(--accent));
   border-radius: 2px;
-  transition: width 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.nav-link:hover,
+.nav-link:hover {
+  color: var(--primary);
+  background-color: rgba(136, 0, 21, 0.05);
+}
+
 .nav-link.active {
   color: var(--primary);
+  background-color: var(--primary-subtle);
+  font-weight: 700;
 }
 
 .nav-link:hover::after,
 .nav-link.active::after {
-  width: 100%;
+  transform: scaleX(1);
 }
 
 .nav-donate-btn {
@@ -336,7 +384,8 @@
     text-align: center;
     gap: 8px;
   }
-  .top-location {
+  .top-location,
+  .top-email-link {
     display: none;
   }
   .top-badge, .top-contact {

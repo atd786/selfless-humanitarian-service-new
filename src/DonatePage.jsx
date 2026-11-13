@@ -186,7 +186,7 @@ function DonatePage({ onNavigate, onDonateClick }) {
                 </div>
 
                 <button 
-                  className={`btn ${selectedTier === tier.id ? "btn-accent" : "btn-outline"} tier-action-btn`}
+                  className={`btn ${selectedTier === tier.id ? "btn-accent" : "btn-outline-crimson"} tier-action-btn`}
                   onClick={(e) => {
                     e.stopPropagation();
                     setSelectedTier(tier.id);
@@ -258,12 +258,16 @@ function DonatePage({ onNavigate, onDonateClick }) {
                   <span className="info-val">donate@selflesshumanitarianservice.com</span>
                 </div>
                 <div className="info-row">
-                  <span className="info-title">General Inquiries Email:</span>
-                  <span className="info-val">contact@selflesshumanitarianservice.com</span>
+                  <span className="info-title">General &amp; Governance Emails:</span>
+                  <span className="info-val">contact@selflesshumanitarianservice.com • admin@selflesshumanitarianservice.com</span>
                 </div>
                 <div className="info-row">
                   <span className="info-title">Direct Director Contact:</span>
                   <span className="info-val">+92 306 1064907 (Dr. Khushro Shahookar)</span>
+                </div>
+                <div className="info-row">
+                  <span className="info-title">Google Verified Listing:</span>
+                  <span className="info-val">Verified Campus on Google Business Profile &amp; Google Search Console</span>
                 </div>
               </div>
 

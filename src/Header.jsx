@@ -54,6 +54,7 @@ function Header({ currentPage = "home", onNavigate, onDonateClick }) {
         <div className="container top-bar-content">
           <div className="top-bar-left">
             <span className="top-badge">
+              <span className="live-pulse-dot" aria-hidden="true"></span>
               <ShieldCheck size={14} /> SECP-Registered National NGO
             </span>
             <span className="top-location">
@@ -61,6 +62,13 @@ function Header({ currentPage = "home", onNavigate, onDonateClick }) {
             </span>
           </div>
           <div className="top-bar-right">
+            <a 
+              href="mailto:info@selflesshumanitarianservice.com"
+              className="top-email-link"
+              title="Email Selfless Humanitarian Service"
+            >
+              info@selflesshumanitarianservice.com
+            </a>
             <a 
               href="https://wa.me/923061064907?text=Hello%20Dr.%20Khushro,%20I%20would%20like%20to%20learn%20more%20about%20Selfless%20Humanitarian%20Service" 
               target="_blank" 
@@ -101,7 +109,7 @@ function Header({ currentPage = "home", onNavigate, onDonateClick }) {
               </a>
             ))}
             <button 
-              className="btn btn-primary nav-donate-btn"
+              className="btn btn-primary btn-shimmer nav-donate-btn"
               onClick={onDonateClick}
             >
               <Heart size={16} fill="currentColor" /> Donate

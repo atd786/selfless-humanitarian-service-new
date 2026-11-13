@@ -112,7 +112,7 @@ function Gallery() {
         <div style={{ textAlign: "center", marginTop: "40px" }}>
           <a 
             href="#/gallery" 
-            className="btn btn-outline" 
+            className="btn btn-outline-crimson btn-shimmer" 
             style={{ display: "inline-flex", alignItems: "center", gap: "8px" }}
           >
             View Full Campus Photo Gallery & Exhibition <ArrowRight size={16} />

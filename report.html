@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Project Delivery &amp; Handover Report — Selfless Humanitarian Service</title>
+  <style>
+    @page {
+      size: A4 portrait;
+      margin: 14mm 14mm 15mm 14mm;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Arial, sans-serif;
+      color: #1e293b;
+      background: #ffffff;
+      font-size: 9.8pt;
+      line-height: 1.48;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+    .page-break { page-break-before: always; break-before: page; }
+    .avoid-break { page-break-inside: avoid; break-inside: avoid; }
+
+    /* Header Banner */
+    .report-header {
+      background: linear-gradient(125deg, #0f172a 0%, #580a18 55%, #880015 100%);
+      color: #ffffff;
+      border-radius: 10px;
+      padding: 20px 24px;
+      margin-bottom: 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 4px solid #d97706;
+    }
+    .brand-col h1 {
+      font-size: 18pt;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 3px;
+    }
+    .brand-col p {
+      font-size: 9pt;
+      color: #fde68a;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+    .meta-col {
+      text-align: right;
+      font-size: 8.5pt;
+      color: rgba(255,255,255,0.88);
+    }
+    .meta-col .doc-badge {
+      display: inline-block;
+      background: rgba(217,119,6,0.28);
+      border: 1px solid rgba(251,191,36,0.6);
+      color: #fef3c7;
+      font-weight: 700;
+      padding: 3px 9px;
+      border-radius: 99px;
+      font-size: 7.5pt;
+      margin-bottom: 5px;
+      text-transform: uppercase;
+    }
+
+    /* Section Headings */
+    h2.sec-title {
+      font-size: 12.2pt;
+      font-weight: 800;
+      color: #880015;
+      border-bottom: 2px solid #f1f5f9;
+      padding-bottom: 4px;
+      margin: 14px 0 9px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    h2.sec-title span.tag {
+      font-size: 7.5pt;
+      font-weight: 700;
+      color: #64748b;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      padding: 2px 8px;
+      border-radius: 99px;
+      text-transform: uppercase;
+    }
+    h3.sub-title {
+      font-size: 10.2pt;
+      font-weight: 700;
+      color: #0f172a;
+      margin: 10px 0 5px;
+    }
+
+    /* Info Grid */
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+    .info-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-left: 3.5px solid #880015;
+      border-radius: 6px;
+      padding: 9px 12px;
+    }
+    .info-card.amber { border-left-color: #d97706; background: #fffbeb; border-color: #fde68a; }
+    .info-card.green { border-left-color: #16a34a; background: #f0fdf4; border-color: #bbf7d0; }
+    .info-label {
+      font-size: 7.5pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: #64748b;
+      letter-spacing: 0.05em;
+    }
+    .info-val {
+      font-size: 9.8pt;
+      font-weight: 700;
+      color: #0f172a;
+      margin-top: 2px;
+    }
+    .info-sub {
+      font-size: 8.2pt;
+      color: #475569;
+      margin-top: 2px;
+    }
+
+    /* Tables */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 12px;
+      font-size: 8.8pt;
+    }
+    th {
+      background: #0f172a;
+      color: #ffffff;
+      text-align: left;
+      padding: 7px 9px;
+      font-weight: 700;
+      font-size: 8.2pt;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    td {
+      padding: 6.5px 9px;
+      border-bottom: 1px solid #e2e8f0;
+      vertical-align: top;
+    }
+    tr:nth-child(even) td { background: #f8fafc; }
+    code {
+      font-family: Consolas, 'Courier New', monospace;
+      background: #f1f5f9;
+      color: #880015;
+      padding: 1px 5px;
+      border-radius: 4px;
+      font-size: 8.5pt;
+      font-weight: 700;
+    }
+
+    /* Confidential Vault Box */
+    .vault-box {
+      border: 1.5px solid #880015;
+      background: #fff5f6;
+      border-radius: 8px;
+      padding: 12px 14px;
+      margin-bottom: 12px;
+    }
+    .vault-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 7px;
+      font-weight: 800;
+      color: #880015;
+      font-size: 9.8pt;
+    }
+    .vault-pill {
+      background: #880015;
+      color: #ffffff;
+      font-size: 7.2pt;
+      padding: 2px 8px;
+      border-radius: 99px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* Lists */
+    ul.clean-list {
+      margin: 4px 0 10px 16px;
+    }
+    ul.clean-list li {
+      margin-bottom: 4px;
+    }
+
+    /* Running Footer */
+    .page-footer {
+      margin-top: 14px;
+      padding-top: 8px;
+      border-top: 1px solid #e2e8f0;
+      display: flex;
+      justify-content: space-between;
+      font-size: 7.8pt;
+      color: #64748b;
+    }
+    .signoff-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      margin-top: 16px;
+    }
+    .sig-box {
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      padding: 12px 14px;
+      background: #f8fafc;
+    }
+    .sig-line {
+      border-top: 1px dashed #94a3b8;
+      margin-top: 28px;
+      padding-top: 5px;
+      font-size: 8.5pt;
+      color: #475569;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==================== PAGE 1 ==================== -->
+  <div class="report-header">
+    <div class="brand-col">
+      <p>Azitics Private Limited — Enterprise Digital Delivery</p>
+      <h1>Project Completion &amp; Credential Handover Report</h1>
+    </div>
+    <div class="meta-col">
+      <div class="doc-badge">Release v3.0 • Production Live</div>
+      <div><strong>Date:</strong> November 13, 2026</div>
+      <div><strong>Ref:</strong> AZT-SHS-2026-V3</div>
+    </div>
+  </div>
+
+  <div class="info-grid">
+    <div class="info-card">
+      <div class="info-label">Client Organization</div>
+      <div class="info-val">Selfless Humanitarian Service (SECP NGO)</div>
+      <div class="info-sub">Attn: Dr. Khushro Shahookar (Ph.D., USA) — Founder &amp; Director</div>
+      <div class="info-sub">Campus: Shahdara, Lahore, Pakistan &bull; +92 306 1064907</div>
+    </div>
+    <div class="info-card green">
+      <div class="info-label">Delivered By</div>
+      <div class="info-val">Azitics Private Limited</div>
+      <div class="info-sub">Full-Stack Web Platform, Backend SQL, SEO &amp; Google Ecosystem Setup</div>
+      <div class="info-sub">Live URL: <strong>https://selflesshumanitarianservice.com/</strong></div>
+    </div>
+  </div>
+
+  <h2 class="sec-title">1. Executive Summary &amp; Flagship v3.0 Upgrade Overview <span class="tag">Production Verified</span></h2>
+  <p style="margin-bottom:8px;">
+    Azitics Private Limited is pleased to present the final Project Delivery &amp; Credential Handover Report for the official web platform of <strong>Selfless Humanitarian Service</strong>. Building upon our initial launch, the platform has been elevated to the flagship <strong>v3.0 Experience</strong>—pairing modern non-profit storytelling with interactive donor conversion tools, hardened PHP/SQL backend persistence, brand iconography, and verified Google Search &amp; Maps presence.
+  </p>
+
+  <table>
+    <thead>
+      <tr>
+        <th style="width:26%;">Delivered Pillar</th>
+        <th style="width:56%;">Scope Implemented &amp; Verified</th>
+        <th style="width:18%;">Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Flagship v3.0 UI &amp; UX</strong></td>
+        <td>Asymmetric 2-column Hero with glassmorphic Quick-Pledge Widget, global Top Scroll Progress Bar, pulsing campus status header, shimmer CTAs, and crisp high-contrast buttons across all sections.</td>
+        <td><strong>Live &amp; Verified</strong></td>
+      </tr>
+      <tr>
+        <td><strong>Interactive Impact Simulator</strong></td>
+        <td>Live USD/PKR calculator with slider and quick presets computing funded student months, daily meals, textbook/uniform kits, IT lab hours, and a 0%-overhead fiduciary breakdown.</td>
+        <td><strong>Live &amp; Verified</strong></td>
+      </tr>
+      <tr>
+        <td><strong>Full Multi-Page Architecture</strong></td>
+        <td>Dedicated deep-dive pages for Home, About, Mission, Projects, History, Board of Directors (uncropped portrait containment), Gallery (including Classroom Interactive Activity), and Donate/Sponsor.</td>
+        <td><strong>Live &amp; Verified</strong></td>
+      </tr>
+      <tr>
+        <td><strong>SQL Backend &amp; Admin Portal</strong></td>
+        <td>PDO backend endpoint (<code>/api/submit.php</code>) with automatic table creation and secure session-authenticated Admin Submission Portal (<code>/admin/</code>).</td>
+        <td><strong>Live &amp; Verified</strong></td>
+      </tr>
+      <tr>
+        <td><strong>Domain Email &amp; Brand Icons</strong></td>
+        <td>5 active official domain mailboxes provisioned on Hostinger Mail, plus multi-size square brand favicons across browser tabs, Apple Touch, and Google SERPs.</td>
+        <td><strong>Active &amp; Live</strong></td>
+      </tr>
+      <tr>
+        <td><strong>Google Search &amp; Business</strong></td>
+        <td>Registered with <strong>Google Search Console</strong> (sitemap &amp; robots.txt) and created verified <strong>Google Business Profile</strong> listing for Shahdara, Lahore campus.</td>
+        <td><strong>Registered</strong></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2 class="sec-title">2. Visual, UI &amp; Mobile Responsiveness Highlights (v3.0) <span class="tag">Hydrogen Design Pass</span></h2>
+  <ul class="clean-list">
+    <li><strong>Asymmetric Flagship Hero &amp; Quick-Pledge Card:</strong> Immediate above-the-fold cause selection (Child Tuition, Mid-Day Meals, Technical Lab Kit) wired directly into the Donation Modal with pre-selected initiative context.</li>
+    <li><strong>Fiduciary Trust &amp; Zero-Overhead Calculator:</strong> Donors can toggle currency (<code>PKR</code> / <code>USD</code>) and visually inspect 55% Tuition/Books, 25% Campus Nutrition, 20% IT/Vocational Hardware, and 0% Executive Salaries.</li>
+    <li><strong>High-Contrast Accessibility Fix:</strong> Resolved light-card outline button visibility across Mission, History, Team, Gallery, and Donate sections using dedicated <code>.btn-outline-crimson</code>, <code>.btn-outline-white</code>, and <code>.btn-light</code> variants.</li>
+    <li><strong>Mobile &amp; Viewport Hardening:</strong> Bounded responsive Donation Modal (never clips off-screen), uncropped Board of Directors portraits (<code>object-fit: contain</code>), persistent WhatsApp Floating Quick-Connect, and animated mobile drawer.</li>
+  </ul>
+
+  <div class="page-footer">
+    <span>Azitics Private Limited &bull; Project Handover Deliverable</span>
+    <span>Confidential — Prepared exclusively for Selfless Humanitarian Service</span>
+    <span>Page 1 of 4</span>
+  </div>
+
+  <!-- ==================== PAGE 2 ==================== -->
+  <div class="page-break"></div>
+  <div class="report-header" style="padding:14px 20px; margin-bottom:14px;">
+    <div class="brand-col">
+      <p>Confidential Access Credentials Vault</p>
+      <h1 style="font-size:15pt;">Admin Portal, Database &amp; Official Email Accounts</h1>
+    </div>
+    <div class="meta-col">
+      <div class="doc-badge">Store Securely</div>
+      <div>Security Policy: No passwords exposed on public site</div>
+    </div>
+  </div>
+
+  <div class="vault-box avoid-break">
+    <div class="vault-header">
+      <span>3. Admin Portal Access Credentials</span>
+      <span class="vault-pill">Confidential — Admin Only</span>
+    </div>
+    <p style="font-size:8.6pt; margin-bottom:8px;">
+      As strictly specified, the Admin Portal password is never displayed anywhere in the website source code, HTML, JavaScript bundles, or on the portal login screen itself. Only authorized trustees holding this report can sign in.
+    </p>
+    <table style="margin-bottom:0;">
+      <tbody>
+        <tr>
+          <td style="width:28%;"><strong>Admin Portal URL</strong></td>
+          <td><code>https://selflesshumanitarianservice.com/admin/</code></td>
+        </tr>
+        <tr>
+          <td><strong>Admin Login Password</strong></td>
+          <td><code>Human.123</code></td>
+        </tr>
+        <tr>
+          <td><strong>Portal Capabilities</strong></td>
+          <td>View timestamped donor &amp; sponsorship inquiries, filter by cause/status, inspect donor contact details, and initiate 1-click WhatsApp/Email follow-up.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="vault-box avoid-break" style="border-color:#d97706; background:#fffbeb;">
+    <div class="vault-header" style="color:#b45309;">
+      <span>4. Backend Database Configuration &amp; Credentials</span>
+      <span class="vault-pill" style="background:#d97706;">Hostinger MySQL + PDO</span>
+    </div>
+    <table style="margin-bottom:6px;">
+      <tbody>
+        <tr>
+          <td style="width:28%;"><strong>MySQL Host / Port</strong></td>
+          <td><code>localhost</code> (Port <code>3306</code> inside Hostinger environment)</td>
+        </tr>
+        <tr>
+          <td><strong>Database Name</strong></td>
+          <td><code>u900031095_selfless</code></td>
+        </tr>
+        <tr>
+          <td><strong>Database Username</strong></td>
+          <td><code>u900031095_human</code></td>
+        </tr>
+        <tr>
+          <td><strong>Database Password</strong></td>
+          <td><code>Human.123</code></td>
+        </tr>
+        <tr>
+          <td><strong>Submission API Endpoint</strong></td>
+          <td><code>https://selflesshumanitarianservice.com/api/submit.php</code> (Automatic schema table provisioning via <code>CREATE TABLE IF NOT EXISTS</code>)</td>
+        </tr>
+      </tbody>
+    </table>
+    <p style="font-size:8pt; color:#78350f;">
+      Note: Backend PDO logic connects natively to MySQL with automatic resilient SQLite persistence failover when local/sandbox MySQL sockets are unavailable, ensuring zero lost inquiries.
+    </p>
+  </div>
+
+  <h2 class="sec-title">5. Official Domain Emails &amp; Mailbox Credentials <span class="tag">Hostinger Mail Active</span></h2>
+  <p style="margin-bottom:8px;">
+    Five dedicated organizational email accounts under <code>@selflesshumanitarianservice.com</code> have been provisioned, verified with active status, and integrated across appropriate sections of the website:
+  </p>
+
+  <table class="avoid-break">
+    <thead>
+      <tr>
+        <th>Email Address</th>
+        <th>Password</th>
+        <th>Primary Organizational Role &amp; Website Placement</th>
+        <th>Quota / Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>admin@selflesshumanitarianservice.com</code></td>
+        <td><code>Human.123</code></td>
+        <td>Executive &amp; Governance Desk (Footer Governance Desk, Donate Governance Info)</td>
+        <td>1.00 GB &bull; Active</td>
+      </tr>
+      <tr>
+        <td><code>info@selflesshumanitarianservice.com</code></td>
+        <td><code>Human.123</code></td>
+        <td>Primary Official Inquiries (Header Top Bar, Footer, Google Business Profile)</td>
+        <td>1.00 GB &bull; Active</td>
+      </tr>
+      <tr>
+        <td><code>contact@selflesshumanitarianservice.com</code></td>
+        <td><code>Human.123</code></td>
+        <td>General &amp; Campus Communications (Donate Page Inquiries, Footer Contact)</td>
+        <td>1.00 GB &bull; Active</td>
+      </tr>
+      <tr>
+        <td><code>donate@selflesshumanitarianservice.com</code></td>
+        <td><code>Human.123</code></td>
+        <td>Donor Verification &amp; Bank Receipts (Donation Page, Receipt Acknowledgments)</td>
+        <td>1.00 GB &bull; Active</td>
+      </tr>
+      <tr>
+        <td><code>new@selflesshumanitarianservice.com</code></td>
+        <td><code>Human.123</code></td>
+        <td>Admissions, Volunteering &amp; New Initiatives Mailbox</td>
+        <td>1.00 GB &bull; Active</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="info-grid avoid-break">
+    <div class="info-card">
+      <div class="info-label">Webmail Browser Login</div>
+      <div class="info-val">https://mail.hostinger.com/</div>
+      <div class="info-sub">Sign in using full email address + password <code>Human.123</code></div>
+    </div>
+    <div class="info-card amber">
+      <div class="info-label">IMAP / SMTP Settings (Outlook / Mobile Mail)</div>
+      <div class="info-sub"><strong>IMAP:</strong> <code>imap.hostinger.com</code> &bull; Port <code>993</code> (SSL/TLS)</div>
+      <div class="info-sub"><strong>SMTP:</strong> <code>smtp.hostinger.com</code> &bull; Port <code>465</code> (SSL/TLS)</div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span>Azitics Private Limited &bull; Project Handover Deliverable</span>
+    <span>Confidential — Store Passwords Securely</span>
+    <span>Page 2 of 4</span>
+  </div>
+
+  <!-- ==================== PAGE 3 ==================== -->
+  <div class="page-break"></div>
+  <div class="report-header" style="padding:14px 20px; margin-bottom:14px;">
+    <div class="brand-col">
+      <p>Search Presence, Google Registrations &amp; Brand Identity</p>
+      <h1 style="font-size:15pt;">Google Search Console, Google Business Profile &amp; SEO</h1>
+    </div>
+    <div class="meta-col">
+      <div class="doc-badge">Verified Digital Footprint</div>
+      <div>Iconography + Structured Data Live</div>
+    </div>
+  </div>
+
+  <h2 class="sec-title">6. Google Search Console &amp; Google Business Profile Registration <span class="tag">SEO &amp; Maps Live</span></h2>
+  <p style="margin-bottom:9px;">
+    To maximize global donor discoverability, organic search authority, and local transparency in Lahore, Azitics Private Limited has registered and configured the following official Google properties for <strong>Selfless Humanitarian Service</strong>:
+  </p>
+
+  <div class="info-grid avoid-break">
+    <div class="info-card green">
+      <div class="info-label">Google Search Console (Registered)</div>
+      <div class="info-val">Domain Property Verified</div>
+      <ul class="clean-list" style="margin-top:5px; margin-bottom:0; font-size:8.4pt;">
+        <li>Registered root domain <code>selflesshumanitarianservice.com</code> in Google Search Console.</li>
+        <li>Submitted XML Sitemap: <code>https://selflesshumanitarianservice.com/sitemap.xml</code> covering Home, About, Mission, Projects, History, Team, Gallery, and Donate routes.</li>
+        <li>Configured <code>robots.txt</code> to guide search crawlers while shielding private <code>/admin/</code> and <code>/api/</code> directories.</li>
+        <li>Embedded Schema.org <code>NGO</code> JSON-LD structured data, Open Graph, and Twitter tags inside <code>index.html</code>.</li>
+      </ul>
+    </div>
+    <div class="info-card amber">
+      <div class="info-label">Google Business Profile (Created)</div>
+      <div class="info-val">Official Organization &amp; Campus Listing</div>
+      <ul class="clean-list" style="margin-top:5px; margin-bottom:0; font-size:8.4pt;">
+        <li>Created official <strong>Google Business Profile</strong> for <strong>Selfless Humanitarian Service</strong> in Shahdara, Lahore, Pakistan.</li>
+        <li>Linked official website (<code>https://selflesshumanitarianservice.com/</code>), phone/WhatsApp (<code>+92 306 1064907</code>), and primary email (<code>info@selflesshumanitarianservice.com</code>).</li>
+        <li>Categorized under Non-Profit Organization / Educational Institution to surface campus visibility on Google Search &amp; Google Maps.</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2 class="sec-title">7. Square Brand Favicon &amp; Google Search Icon Implementation <span class="tag">Multi-Resolution</span></h2>
+  <p style="margin-bottom:8px;">
+    Replacing generic placeholder icons, the official crimson &amp; white <strong>Selfless Humanitarian Service</strong> emblem has been mastered into square high-DPI icon assets specifically compliant with Google Search Favicon Guidelines (multiples of 48&times;48px):
+  </p>
+  <table class="avoid-break">
+    <thead>
+      <tr>
+        <th>Asset File Path</th>
+        <th>Dimensions / Format</th>
+        <th>Target Platform / Purpose</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>/favicon.ico</code> &amp; <code>/favicon-32x32.png</code></td>
+        <td>16&times;16, 32&times;32, 48&times;48 ICO / PNG</td>
+        <td>Desktop &amp; mobile browser tabs, bookmarks bar</td>
+      </tr>
+      <tr>
+        <td><code>/favicon-48x48.png</code> &amp; <code>/favicon-96x96.png</code></td>
+        <td>48&times;48 &amp; 96&times;96 Square PNG</td>
+        <td>Google Search results page (SERP) site icon compliance</td>
+      </tr>
+      <tr>
+        <td><code>/apple-touch-icon.png</code></td>
+        <td>180&times;180 Square PNG</td>
+        <td>iOS &amp; iPadOS Home Screen shortcuts</td>
+      </tr>
+      <tr>
+        <td><code>/favicon-192x192.png</code> &amp; <code>/favicon-512x512.png</code></td>
+        <td>192&times;192 &amp; 512&times;512 PNG</td>
+        <td>Android Chrome, PWA manifest, and Google Business rich thumbnails</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2 class="sec-title">8. Source Code Repositories &amp; Live Deployment Endpoints <span class="tag">Synced</span></h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Environment / Repository</th>
+        <th>Location / URL</th>
+        <th>Notes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Primary Production Website</strong></td>
+        <td><code>https://selflesshumanitarianservice.com/</code></td>
+        <td>Hostinger live root bundle (v3.0 + PHP API + Admin + Icons + Sitemap)</td>
+      </tr>
+      <tr>
+        <td><strong>Secondary Campus Mirror</strong></td>
+        <td><code>https://selflesshumanitarianservice.com/new/</code></td>
+        <td>Synchronized via Hostinger Git Integration</td>
+      </tr>
+      <tr>
+        <td><strong>Primary GitHub Repository</strong></td>
+        <td><code>github.com/atd786/selfless-humanitarian-service</code></td>
+        <td>Branch <code>main</code> — full React + Vite source &amp; PHP backend</td>
+      </tr>
+      <tr>
+        <td><strong>Secondary GitHub Mirror</strong></td>
+        <td><code>github.com/atd786/selfless-humanitarian-service-new</code></td>
+        <td>Branch <code>main</code> — synced parity mirror</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="page-footer">
+    <span>Azitics Private Limited &bull; Project Handover Deliverable</span>
+    <span>SEO, Sitemaps &amp; Google Ecosystem Handover</span>
+    <span>Page 3 of 4</span>
+  </div>
+
+  <!-- ==================== PAGE 4 ==================== -->
+  <div class="page-break"></div>
+  <div class="report-header" style="padding:14px 20px; margin-bottom:14px;">
+    <div class="brand-col">
+      <p>Operational Guide, Maintenance &amp; Sign-Off</p>
+      <h1 style="font-size:15pt;">Operations Checklist &amp; Formal Project Acceptance</h1>
+    </div>
+    <div class="meta-col">
+      <div class="doc-badge">Handover Complete</div>
+      <div>Support: Azitics Private Limited</div>
+    </div>
+  </div>
+
+  <h2 class="sec-title">9. Client Operations &amp; Security Best Practices <span class="tag">Recommended Workflow</span></h2>
+  <table>
+    <thead>
+      <tr>
+        <th style="width:24%;">Routine Activity</th>
+        <th style="width:76%;">Recommended Procedure for Selfless Humanitarian Service Team</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Reviewing Donor Inquiries</strong></td>
+        <td>Navigate to <code>https://selflesshumanitarianservice.com/admin/</code>, sign in with password <code>Human.123</code>, review daily pledges/messages, and reach out via the 1-click WhatsApp/Email actions.</td>
+      </tr>
+      <tr>
+        <td><strong>Managing Official Mailboxes</strong></td>
+        <td>Log in at <code>https://mail.hostinger.com/</code> or configure Apple Mail / Outlook via IMAP/SMTP (Section 5). Monitor <code>donate@</code> for transfer receipts and <code>info@</code> / <code>contact@</code> for general inquiries.</td>
+      </tr>
+      <tr>
+        <td><strong>Google Search &amp; Profile</strong></td>
+        <td>Search Console automatically re-crawls <code>sitemap.xml</code> on updates. Post monthly campus photos and announcements to the Google Business Profile to strengthen local donor trust.</td>
+      </tr>
+      <tr>
+        <td><strong>Post-Handover Password Hygiene</strong></td>
+        <td>We recommend updating mailbox and database credentials periodically inside Hostinger hPanel while keeping this PDF archived in an encrypted organizational folder.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2 class="sec-title">10. Formal Delivery &amp; Acceptance Sign-Off <span class="tag">Azitics Private Limited</span></h2>
+  <p style="margin-bottom:10px;">
+    This document certifies that <strong>Azitics Private Limited</strong> has completed design, engineering, backend SQL integration, Admin Portal deployment, official email provisioning, brand favicon updates, Google Search Console registration, and Google Business Profile creation for <strong>Selfless Humanitarian Service</strong>, and all production endpoints are operating normally.
+  </p>
+
+  <div class="signoff-grid avoid-break">
+    <div class="sig-box">
+      <div class="info-label">Prepared &amp; Delivered By</div>
+      <div class="info-val" style="margin-top:4px;">Azitics Private Limited</div>
+      <div class="info-sub">Engineering &amp; Digital Transformation Division</div>
+      <div class="sig-line">
+        Authorized Signatory &bull; Azitics Private Limited<br />
+        Date: November 13, 2026
+      </div>
+    </div>
+    <div class="sig-box">
+      <div class="info-label">Accepted On Behalf Of Client</div>
+      <div class="info-val" style="margin-top:4px;">Selfless Humanitarian Service</div>
+      <div class="info-sub">Dr. Khushro Shahookar (Ph.D., USA) — Founder &amp; Director</div>
+      <div class="sig-line">
+        Client Signature &amp; Organization Stamp<br />
+        Date: __________________________
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top:26px; background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:12px 15px; font-size:8.4pt; color:#475569;">
+    <strong>Delivery Package Note:</strong> All source files, built assets, favicons, SEO manifests (<code>sitemap.xml</code>, <code>robots.txt</code>), database schema handlers, and this signed delivery report PDF are included in the final client handover archive.
+  </div>
+
+  <div class="page-footer">
+    <span>Azitics Private Limited &bull; Project Handover Deliverable</span>
+    <span>Ref: AZT-SHS-2026-V3</span>
+    <span>Page 4 of 4</span>
+  </div>
+
+</body>
+</html>

@@ -227,7 +227,7 @@ function Donations({ selectedProject }) {
         <div style={{ textAlign: "center", marginTop: "40px" }}>
           <a 
             href="#/donate" 
-            className="btn btn-outline" 
+            className="btn btn-outline-crimson btn-shimmer" 
             style={{ display: "inline-flex", alignItems: "center", gap: "8px" }}
           >
             Visit Dedicated Sponsorship & Online Inquiry Page <ArrowRight size={16} />

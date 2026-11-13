@@ -1,44 +1,43 @@
 import React, { useState, useEffect } from "react";
+import { ArrowRight, Heart, ShieldCheck, Award, Users, ChevronRight, Sparkles } from "lucide-react";
 import "./Hero.css";
-import { 
-  Heart, 
-  ArrowRight, 
-  BookOpen, 
-  Users, 
-  Calendar, 
-  Award,
-  Sparkles 
-} from "lucide-react";
 
 const slides = [
   {
-    image: "./slide1.jpg",
-    tagline: "Free Elementary & Primary Education",
-    title: "Lighting the Torch of Knowledge for Underprivileged Children",
-    desc: "Providing high-quality schooling from KG to Year 5 for children deprived of education in Shahdara, Lahore."
+    image: "/images/hero-slider-1.jpg",
+    title: "Empowering Young Minds Through Quality Education",
+    subtitle: "Providing completely free high school education, books, uniforms, and daily nutrition to underprivileged children in Shahdara, Lahore.",
+    tag: "High School & Evening Academy"
   },
   {
-    image: "./slide2.jpg",
-    tagline: "Equal Opportunity Learning",
-    title: "Empowering Margins of Society with Modern Classrooms",
-    desc: "Overcoming poverty through structured English-medium education, personal mentorship, and dedicated teachers."
+    image: "/images/hero-slider-2.jpg",
+    title: "Equipping Future Tech & Vocational Leaders",
+    subtitle: "Establishing the Selfless Technical Training Institute to impart computer IT, coding, digital arts, and market-ready vocational skills.",
+    tag: "Technical Training Initiative"
   },
   {
-    image: "./slide3.jpg",
-    tagline: "Nutrition & Care",
-    title: "Nourishing Young Bodies and Inspiring Curious Minds",
-    desc: "Ensuring children receive nutritious meals and safe study environments so no child studies on an empty stomach."
+    image: "/images/hero-slider-3.jpg",
+    title: "Nurturing Dignity, Health & Daily Nutrition",
+    subtitle: "Ensuring no child studies on an empty stomach through daily mid-day balanced meals and basic medical care.",
+    tag: "Health & Child Welfare"
   },
   {
-    image: "./slide4.jpg",
-    tagline: "Vocational & Technical Training",
-    title: "Preparing Pakistan's Youth for High-Demand Careers",
-    desc: "Equipping young people with industrial and technical skills for sustainable employment and long-term independence."
+    image: "/images/hero-slider-4.jpg",
+    title: "Selfless Humanitarian Service for a Brighter Pakistan",
+    subtitle: "Founded by international educator Dr. Khushro Shahookar (Ph.D., USA), registered nationally with SECP as a nonprofit.",
+    tag: "SECP Registered NGO"
   }
+];
+
+const quickCauses = [
+  { id: "High School Tuition Sponsorship", label: "Child Monthly Tuition", amount: "PKR 7,500", sub: "1 student full school month" },
+  { id: "Daily Nutritious Student Meals", label: "Mid-Day Meals Fund", amount: "PKR 15,000", sub: "Nourish 10 scholars monthly" },
+  { id: "Selfless Technical Institute Fund", label: "Technical Lab Kit", amount: "PKR 35,000", sub: "IT & vocational hardware" }
 ];
 
 function Hero({ onDonateClick }) {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [selectedQuickCause, setSelectedQuickCause] = useState(quickCauses[0].id);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -47,107 +46,149 @@ function Hero({ onDonateClick }) {
     return () => clearInterval(timer);
   }, []);
 
+  const currentSlideObj = slides[currentSlide];
+
   return (
-    <section className="hero-section" id="about">
-      {/* Background Slides */}
-      <div className="hero-slides-wrapper">
+    <section className="hero-section">
+      {/* Background Slider */}
+      <div className="hero-slides">
         {slides.map((slide, index) => (
           <div
             key={index}
             className={`hero-slide ${index === currentSlide ? "active" : ""}`}
             style={{ backgroundImage: `url(${slide.image})` }}
-          >
-            <div className="hero-overlay"></div>
-          </div>
+          />
         ))}
+        <div className="hero-overlay"></div>
       </div>
 
-      {/* Hero Content */}
-      <div className="container hero-content-container">
-        <div className="hero-content">
-          <div className="hero-badge animate-fade-in">
-            <Sparkles size={16} className="sparkle-icon" />
-            <span>SECP-Registered National NGO in Pakistan</span>
-          </div>
+      {/* Main Content Layout: Asymmetric 2-Column Flagship Hero */}
+      <div className="container hero-container-inner">
+        <div className="hero-grid">
+          {/* Left Column: Narrative & Primary CTAs */}
+          <div className="hero-content">
+            <div className="hero-badge-wrap">
+              <span className="hero-badge">
+                <Sparkles size={14} className="badge-sparkle" />
+                {currentSlideObj.tag}
+              </span>
+              <span className="hero-slide-counter">
+                0{currentSlide + 1} / 0{slides.length}
+              </span>
+            </div>
 
-          <h1 className="hero-title animate-fade-in-up">
-            {slides[currentSlide].title}
-          </h1>
+            <h1 className="hero-title">{currentSlideObj.title}</h1>
+            <p className="hero-subtitle">{currentSlideObj.subtitle}</p>
 
-          <p className="hero-description animate-fade-in-up-delay">
-            {slides[currentSlide].desc}
-          </p>
-
-          <div className="hero-actions">
-            <button className="btn btn-accent btn-hero-primary" onClick={onDonateClick}>
-              <Heart size={18} fill="currentColor" /> Support Our Projects
-            </button>
-            <a 
-              href="#projects" 
-              className="btn btn-outline btn-hero-secondary"
-              onClick={(e) => {
-                e.preventDefault();
-                document.querySelector("#projects")?.scrollIntoView({ behavior: "smooth" });
-              }}
-            >
-              Explore Our Projects <ArrowRight size={18} />
-            </a>
-          </div>
-
-          {/* Slide Indicator Dots */}
-          <div className="slide-indicators">
-            {slides.map((_, index) => (
+            <div className="hero-actions">
               <button
-                key={index}
-                className={`indicator-dot ${index === currentSlide ? "active" : ""}`}
-                onClick={() => setCurrentSlide(index)}
-                aria-label={`Go to slide ${index + 1}`}
-              />
-            ))}
+                className="btn btn-accent btn-shimmer hero-cta-btn"
+                onClick={() => onDonateClick("General Educational Fund")}
+              >
+                <Heart size={19} fill="currentColor" /> Sponsor a Child Today
+              </button>
+              <a href="#projects" className="btn btn-outline-white hero-secondary-btn">
+                Explore Our Projects <ArrowRight size={18} />
+              </a>
+            </div>
+
+            {/* Micro Trust Strip */}
+            <div className="hero-micro-trust">
+              <span><ShieldCheck size={15} /> Zero-Overhead Field Model</span>
+              <span><Award size={15} /> Verified Campus in Shahdara</span>
+              <span><Users size={15} /> Direct WhatsApp Transparency</span>
+            </div>
+
+            {/* Slide Indicator Controls */}
+            <div className="hero-dots" aria-label="Slide controls">
+              {slides.map((_, idx) => (
+                <button
+                  key={idx}
+                  className={`hero-dot ${idx === currentSlide ? "active" : ""}`}
+                  onClick={() => setCurrentSlide(idx)}
+                  aria-label={`Slide ${idx + 1}`}
+                />
+              ))}
+            </div>
+          </div>
+
+          {/* Right Column: Floating Direct Impact Quick-Pledge Glassmorphic Widget */}
+          <div className="hero-quick-widget">
+            <div className="widget-header">
+              <span className="widget-pill">Direct 100% Campus Impact</span>
+              <h3>Quick Sponsorship Pledge</h3>
+              <p>Select a priority need to support immediately via Bank Transfer or Direct WhatsApp.</p>
+            </div>
+
+            <div className="widget-causes">
+              {quickCauses.map((cause) => {
+                const isSelected = selectedQuickCause === cause.id;
+                return (
+                  <button
+                    key={cause.id}
+                    type="button"
+                    className={`widget-cause-option ${isSelected ? "selected" : ""}`}
+                    onClick={() => setSelectedQuickCause(cause.id)}
+                  >
+                    <div className="cause-option-left">
+                      <span className="cause-radio">
+                        {isSelected && <span className="cause-radio-dot" />}
+                      </span>
+                      <div>
+                        <div className="cause-name">{cause.label}</div>
+                        <div className="cause-sub">{cause.sub}</div>
+                      </div>
+                    </div>
+                    <div className="cause-amt">{cause.amount}</div>
+                  </button>
+                );
+              })}
+            </div>
+
+            <button
+              type="button"
+              className="btn btn-primary btn-shimmer widget-submit-btn"
+              onClick={() => onDonateClick(selectedQuickCause)}
+            >
+              Pledge This Cause <ChevronRight size={18} />
+            </button>
+
+            <div className="widget-footer-note">
+              <ShieldCheck size={14} /> Direct confirmation from Dr. Khushro Shahookar
+            </div>
           </div>
         </div>
       </div>
 
-      {/* Impact Stats Banner Strip */}
+      {/* Bottom Floating Trust Stats Strip */}
       <div className="hero-stats-strip">
         <div className="container stats-grid">
           <div className="stat-card">
-            <div className="stat-icon-wrapper">
-              <Users size={24} className="stat-icon" />
-            </div>
+            <div className="stat-icon"><Users size={22} /></div>
             <div className="stat-info">
-              <span className="stat-number">50+</span>
-              <span className="stat-label">Students Educated (KG–5)</span>
+              <div className="stat-num">100%</div>
+              <div className="stat-lbl">Free Tuition & Books</div>
             </div>
           </div>
-
           <div className="stat-card">
-            <div className="stat-icon-wrapper">
-              <Calendar size={24} className="stat-icon" />
-            </div>
+            <div className="stat-icon"><ShieldCheck size={22} /></div>
             <div className="stat-info">
-              <span className="stat-number">2015</span>
-              <span className="stat-label">Established & Serving</span>
+              <div className="stat-num">SECP</div>
+              <div className="stat-lbl">Registered Nonprofit NGO</div>
             </div>
           </div>
-
           <div className="stat-card">
-            <div className="stat-icon-wrapper">
-              <BookOpen size={24} className="stat-icon" />
-            </div>
+            <div className="stat-icon"><Award size={22} /></div>
             <div className="stat-info">
-              <span className="stat-number">100%</span>
-              <span className="stat-label">Free Education & Books</span>
+              <div className="stat-num">10+ Yrs</div>
+              <div className="stat-lbl">Community Commitment</div>
             </div>
           </div>
-
           <div className="stat-card">
-            <div className="stat-icon-wrapper">
-              <Award size={24} className="stat-icon" />
-            </div>
+            <div className="stat-icon"><Heart size={22} /></div>
             <div className="stat-info">
-              <span className="stat-number">2 Major</span>
-              <span className="stat-label">Envisioned Expansions</span>
+              <div className="stat-num">Direct</div>
+              <div className="stat-lbl">Zero-Overhead Aid</div>
             </div>
           </div>
         </div>

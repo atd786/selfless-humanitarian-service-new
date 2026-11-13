@@ -1,0 +1,326 @@
+/* ImpactSimulator.css - Interactive Impact Calculator & Fiduciary Transparency */
+
+.impact-sim-section {
+  background: linear-gradient(180deg, #fffdfd 0%, #f8fafc 100%);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.impact-sim-shell {
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 40px;
+  box-shadow: 0 22px 50px rgba(15, 23, 42, 0.06);
+}
+
+.impact-sim-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 34px;
+  flex-wrap: wrap;
+}
+
+.sim-title-block h2 {
+  font-size: 2.05rem;
+  font-weight: 800;
+  color: var(--text-dark);
+  margin: 8px 0 8px;
+}
+
+.sim-title-block p {
+  font-size: 0.98rem;
+  color: var(--text-muted);
+  max-width: 650px;
+  margin: 0;
+}
+
+.sim-currency-toggle {
+  display: inline-flex;
+  background: #f1f5f9;
+  padding: 4px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--border);
+}
+
+.currency-btn {
+  border: none;
+  background: transparent;
+  padding: 8px 18px;
+  border-radius: var(--radius-full);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.currency-btn.active {
+  background: var(--primary);
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(136, 0, 21, 0.25);
+}
+
+.impact-sim-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 32px;
+  align-items: stretch;
+}
+
+/* Control Card */
+.sim-control-card {
+  background: linear-gradient(155deg, #fff5f6 0%, #ffffff 55%);
+  border: 1.5px solid rgba(136, 0, 21, 0.14);
+  border-radius: 18px;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.sim-amount-display {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 18px;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.sim-amount-label {
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+}
+
+.sim-amount-value {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--primary);
+  letter-spacing: -0.02em;
+}
+
+.sim-slider-wrap {
+  margin-bottom: 18px;
+}
+
+.sim-range-slider {
+  width: 100%;
+  accent-color: var(--primary);
+  height: 8px;
+  cursor: pointer;
+}
+
+.sim-slider-bounds {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-top: 6px;
+}
+
+.sim-presets-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.sim-preset-btn {
+  padding: 7px 13px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--border-medium);
+  background: #ffffff;
+  color: var(--text-dark);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.sim-preset-btn:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.sim-preset-btn.active {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #ffffff;
+}
+
+/* Fiduciary Bars */
+.fiduciary-box {
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 18px;
+}
+
+.fiduciary-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.86rem;
+  font-weight: 800;
+  color: var(--primary);
+  margin-bottom: 14px;
+}
+
+.fid-bar-item {
+  margin-bottom: 11px;
+}
+
+.fid-bar-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.78rem;
+  color: var(--text-dark);
+  margin-bottom: 5px;
+}
+
+.fid-track {
+  width: 100%;
+  height: 7px;
+  background: #f1f5f9;
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.fid-fill {
+  height: 100%;
+  border-radius: var(--radius-full);
+  transition: width 0.35s ease;
+}
+
+.fid-crimson { background: var(--primary); }
+.fid-amber { background: #d97706; }
+.fid-emerald { background: #16a34a; }
+
+.fid-zero-guarantee {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px dashed var(--border);
+  font-size: 0.78rem;
+  color: #15803d;
+}
+
+/* Right Metrics Column */
+.sim-metrics-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.sim-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.sim-metric-card {
+  background: #f8fafc;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 20px;
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+
+.sim-metric-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  background: #ffffff;
+}
+
+.metric-icon-box {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+.metric-icon-box.crimson { background: #fee2e2; color: var(--primary); }
+.metric-icon-box.amber { background: #fef3c7; color: #b45309; }
+.metric-icon-box.emerald { background: #dcfce7; color: #15803d; }
+.metric-icon-box.indigo { background: #e0e7ff; color: #4338ca; }
+
+.metric-num {
+  font-size: 1.85rem;
+  font-weight: 800;
+  color: var(--text-dark);
+  line-height: 1.1;
+}
+
+.metric-title {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin: 4px 0 6px;
+}
+
+.sim-metric-card p {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.45;
+  margin: 0;
+}
+
+.sim-cta-banner {
+  background: linear-gradient(120deg, #0f172a 0%, #450a14 100%);
+  color: #ffffff;
+  border-radius: 16px;
+  padding: 20px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.sim-cta-banner h4 {
+  color: #ffffff;
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 3px;
+}
+
+.sim-cta-banner p {
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 0.84rem;
+  margin: 0;
+}
+
+@media (max-width: 992px) {
+  .impact-sim-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .impact-sim-shell {
+    padding: 22px 16px;
+  }
+  .sim-title-block h2 {
+    font-size: 1.55rem;
+  }
+  .sim-metrics-grid {
+    grid-template-columns: 1fr;
+  }
+  .sim-cta-banner {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}

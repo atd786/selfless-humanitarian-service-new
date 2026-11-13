@@ -93,7 +93,7 @@ function History() {
         <div style={{ textAlign: "center", marginTop: "36px" }}>
           <a 
             href="#/history" 
-            className="btn btn-outline" 
+            className="btn btn-outline-crimson btn-shimmer" 
             style={{ display: "inline-flex", alignItems: "center", gap: "8px" }}
           >
             Read Our Complete 10-Year History & Milestones <ArrowRight size={16} />

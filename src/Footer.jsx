@@ -92,7 +92,7 @@ function Footer({ onNavigate }) {
             </li>
             <li>
               <ShieldCheck size={18} className="footer-contact-icon" />
-              <span>Dr. Khushro Shahookar (Founder & Director)</span>
+              <span>Dr. Khushro Shahookar (Founder & Director)<br /><small style={{ color: "rgba(255,255,255,0.72)" }}>Google Search Console &amp; Business Profile Verified</small></span>
             </li>
             <li>
               <Mail size={18} className="footer-contact-icon" />
@@ -105,8 +105,9 @@ function Footer({ onNavigate }) {
             <li>
               <Mail size={18} className="footer-contact-icon" />
               <span>
-                <strong>Donation Verification:</strong><br />
-                <a href="mailto:donate@selflesshumanitarianservice.com">donate@selflesshumanitarianservice.com</a>
+                <strong>Donation &amp; Governance Desk:</strong><br />
+                <a href="mailto:donate@selflesshumanitarianservice.com">donate@selflesshumanitarianservice.com</a><br />
+                <a href="mailto:admin@selflesshumanitarianservice.com">admin@selflesshumanitarianservice.com</a>
               </span>
             </li>
           </ul>
