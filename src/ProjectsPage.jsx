@@ -211,9 +211,9 @@ function ProjectsPage({ onNavigate, onDonateClick }) {
               <div className="project-action-row">
                 <button 
                   className="btn btn-primary"
-                  onClick={() => onDonateClick("Elementary School Student Sponsorship")}
+                  onClick={() => onDonateClick("Sponsor a Child's Tuition (PKR 5,500/mo or USD 20/mo)")}
                 >
-                  <Heart size={16} fill="currentColor" /> Sponsor an Elementary Student ($25/mo)
+                  <Heart size={16} fill="currentColor" /> Sponsor an Elementary Student (PKR 5,500 / $20 mo)
                 </button>
               </div>
             </div>

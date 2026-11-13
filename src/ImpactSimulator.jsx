@@ -4,9 +4,9 @@ import "./ImpactSimulator.css";
 
 function ImpactSimulator({ onDonateClick }) {
   const [currency, setCurrency] = useState("PKR");
-  const [amountPKR, setAmountPKR] = useState(15000);
+  const [amountPKR, setAmountPKR] = useState(50000);
 
-  const presetsPKR = [5000, 7500, 15000, 35000, 75000];
+  const presetsPKR = [5500, 11000, 45000, 50000, 85000];
   const exchangeRate = 280; // 1 USD ≈ 280 PKR
 
   const displayAmount = currency === "USD"
@@ -22,17 +22,35 @@ function ImpactSimulator({ onDonateClick }) {
     setAmountPKR(pkrVal);
   };
 
-  // Real-world NGO field cost metrics
-  const fullStudentMonths = Math.max(1, Math.floor(amountPKR / 7500));
-  const nutritiousMeals = Math.max(5, Math.floor(amountPKR / 150));
-  const textbooksAndKits = Math.max(1, Math.floor(amountPKR / 1800));
-  const techLabHours = Math.max(4, Math.floor(amountPKR / 500));
+  // Client-specified 100% Zero-Overhead Fiduciary Allocation:
+  // 35% Tuition Fees | 35% Mid-Day Meals | 10% Books / Uniform Sets | 20% IT & Tech Labs
+  const tuitionSharePKR = Math.round(amountPKR * 0.35);
+  const mealsSharePKR = Math.round(amountPKR * 0.35);
+  const booksSharePKR = Math.round(amountPKR * 0.10);
+  const techSharePKR = Math.round(amountPKR * 0.20);
 
-  const formatMoney = (pkr) => {
+  // Client-specified unit costs applied strictly to each category's allocated share:
+  // Rs. 5,000 / student fees | Rs. 300 / meal | Rs. 5,000 / book & uniform set | Rs. 500 / tech lab hour
+  const formatUnitCount = (val) => {
+    if (val >= 10) return Math.floor(val).toString();
+    if (val >= 1) return Number.isInteger(val) ? val.toString() : val.toFixed(1).replace(/\.0$/, "");
+    return val.toFixed(2).replace(/0$/, "");
+  };
+
+  const fullStudentMonths = formatUnitCount(tuitionSharePKR / 5000);
+  const nutritiousMeals = formatUnitCount(mealsSharePKR / 300);
+  const textbooksAndKits = formatUnitCount(booksSharePKR / 5000);
+  const techLabHours = formatUnitCount(techSharePKR / 500);
+
+  const toUSD = (pkr) => Math.max(1, Math.round(pkr / exchangeRate));
+
+  const formatDualMoney = (pkr) => `PKR ${pkr.toLocaleString()} ($${toUSD(pkr).toLocaleString()})`;
+
+  const formatPrimaryMoney = (pkr) => {
     if (currency === "USD") {
-      return `$${Math.round(pkr / exchangeRate).toLocaleString()}`;
+      return `$${toUSD(pkr).toLocaleString()} (PKR ${pkr.toLocaleString()})`;
     }
-    return `PKR ${pkr.toLocaleString()}`;
+    return `PKR ${pkr.toLocaleString()} ($${toUSD(pkr).toLocaleString()})`;
   };
 
   return (
@@ -47,7 +65,7 @@ function ImpactSimulator({ onDonateClick }) {
               </span>
               <h2>See Exactly What Your Generosity Achieves</h2>
               <p>
-                Every rupee donated to Selfless Humanitarian Service goes directly into classrooms, meals, and labs in Shahdara, Lahore—with 0% executive overhead.
+                Every rupee and dollar donated to Selfless Humanitarian Service goes directly into classrooms, meals, and labs in Shahdara, Lahore—with 0% executive overhead.
               </p>
             </div>
 
@@ -57,14 +75,14 @@ function ImpactSimulator({ onDonateClick }) {
                 className={`currency-btn ${currency === "PKR" ? "active" : ""}`}
                 onClick={() => setCurrency("PKR")}
               >
-                PKR (Rs.)
+                PKR / USD
               </button>
               <button
                 type="button"
                 className={`currency-btn ${currency === "USD" ? "active" : ""}`}
                 onClick={() => setCurrency("USD")}
               >
-                USD ($)
+                USD / PKR
               </button>
             </div>
           </div>
@@ -74,23 +92,25 @@ function ImpactSimulator({ onDonateClick }) {
             <div className="sim-control-card">
               <div className="sim-amount-display">
                 <span className="sim-amount-label">Selected Contribution</span>
-                <div className="sim-amount-value">{formatMoney(amountPKR)}</div>
+                <div className="sim-amount-value" style={{ fontSize: "1.65rem" }}>
+                  {formatPrimaryMoney(amountPKR)}
+                </div>
               </div>
 
               <div className="sim-slider-wrap">
                 <input
                   type="range"
                   className="sim-range-slider"
-                  min={currency === "USD" ? 15 : 3000}
-                  max={currency === "USD" ? 400 : 112000}
-                  step={currency === "USD" ? 5 : 1500}
+                  min={currency === "USD" ? 20 : 5500}
+                  max={currency === "USD" ? 500 : 140000}
+                  step={currency === "USD" ? 5 : 1000}
                   value={displayAmount}
                   onChange={handleSliderChange}
                   aria-label="Contribution amount slider"
                 />
                 <div className="sim-slider-bounds">
-                  <span>{currency === "USD" ? "$15" : "PKR 3,000"}</span>
-                  <span>{currency === "USD" ? "$400" : "PKR 112,000"}</span>
+                  <span>{currency === "USD" ? "$20 (PKR 5,500)" : "PKR 5,500 ($20)"}</span>
+                  <span>{currency === "USD" ? "$500 (PKR 140,000)" : "PKR 140,000 ($500)"}</span>
                 </div>
               </div>
 
@@ -102,7 +122,7 @@ function ImpactSimulator({ onDonateClick }) {
                     className={`sim-preset-btn ${Math.abs(amountPKR - preset) < 500 ? "active" : ""}`}
                     onClick={() => handlePresetClick(preset)}
                   >
-                    {formatMoney(preset)}
+                    PKR {preset.toLocaleString()} / ${toUSD(preset)}
                   </button>
                 ))}
               </div>
@@ -116,26 +136,34 @@ function ImpactSimulator({ onDonateClick }) {
 
                 <div className="fid-bar-item">
                   <div className="fid-bar-label">
-                    <span>Tuition, Books & Uniforms</span>
-                    <strong>55% ({formatMoney(Math.round(amountPKR * 0.55))})</strong>
+                    <span>Tuition Fees</span>
+                    <strong>35% ({formatDualMoney(tuitionSharePKR)})</strong>
                   </div>
-                  <div className="fid-track"><div className="fid-fill fid-crimson" style={{ width: "55%" }}></div></div>
+                  <div className="fid-track"><div className="fid-fill fid-crimson" style={{ width: "35%" }}></div></div>
                 </div>
 
                 <div className="fid-bar-item">
                   <div className="fid-bar-label">
-                    <span>Daily Mid-Day Campus Nutrition</span>
-                    <strong>25% ({formatMoney(Math.round(amountPKR * 0.25))})</strong>
+                    <span>Mid-Day Meals</span>
+                    <strong>35% ({formatDualMoney(mealsSharePKR)})</strong>
                   </div>
-                  <div className="fid-track"><div className="fid-fill fid-amber" style={{ width: "25%" }}></div></div>
+                  <div className="fid-track"><div className="fid-fill fid-amber" style={{ width: "35%" }}></div></div>
                 </div>
 
                 <div className="fid-bar-item">
                   <div className="fid-bar-label">
-                    <span>IT Labs & Vocational Hardware</span>
-                    <strong>20% ({formatMoney(Math.round(amountPKR * 0.20))})</strong>
+                    <span>Books / Uniform Sets</span>
+                    <strong>10% ({formatDualMoney(booksSharePKR)})</strong>
                   </div>
-                  <div className="fid-track"><div className="fid-fill fid-emerald" style={{ width: "20%" }}></div></div>
+                  <div className="fid-track"><div className="fid-fill fid-emerald" style={{ width: "10%" }}></div></div>
+                </div>
+
+                <div className="fid-bar-item">
+                  <div className="fid-bar-label">
+                    <span>IT and Tech Labs</span>
+                    <strong>20% ({formatDualMoney(techSharePKR)})</strong>
+                  </div>
+                  <div className="fid-track"><div className="fid-fill" style={{ width: "20%", background: "#4338ca" }}></div></div>
                 </div>
 
                 <div className="fid-zero-guarantee">
@@ -151,29 +179,29 @@ function ImpactSimulator({ onDonateClick }) {
                 <div className="sim-metric-card">
                   <div className="metric-icon-box crimson"><BookOpen size={24} /></div>
                   <div className="metric-num">{fullStudentMonths}</div>
-                  <div className="metric-title">Full Student Month(s)</div>
-                  <p>100% free classroom tuition, exam fees, and faculty mentorship</p>
+                  <div className="metric-title">Student Fee Coverage(s)</div>
+                  <p>@ Rs. 5,000 ($18) per student from 35% tuition share ({formatDualMoney(tuitionSharePKR)})</p>
                 </div>
 
                 <div className="sim-metric-card">
                   <div className="metric-icon-box amber"><Utensils size={24} /></div>
                   <div className="metric-num">{nutritiousMeals}</div>
                   <div className="metric-title">Nutritious School Meals</div>
-                  <p>Freshly cooked balanced lunches keeping young minds focused</p>
+                  <p>@ Rs. 300 ($1.07) per meal from 35% mid-day meals share ({formatDualMoney(mealsSharePKR)})</p>
                 </div>
 
                 <div className="sim-metric-card">
                   <div className="metric-icon-box emerald"><ShieldCheck size={24} /></div>
                   <div className="metric-num">{textbooksAndKits}</div>
-                  <div className="metric-title">Textbooks & Uniform Sets</div>
-                  <p>Complete seasonal uniform, syllabus workbooks, and stationery</p>
+                  <div className="metric-title">Textbook &amp; Uniform Sets</div>
+                  <p>@ Rs. 5,000 ($18) per set from 10% books &amp; uniform share ({formatDualMoney(booksSharePKR)})</p>
                 </div>
 
                 <div className="sim-metric-card">
                   <div className="metric-icon-box indigo"><Laptop size={24} /></div>
                   <div className="metric-num">{techLabHours} hrs</div>
-                  <div className="metric-title">IT & Vocational Lab Training</div>
-                  <p>Hands-on digital literacy, coding, and trade skills instruction</p>
+                  <div className="metric-title">IT &amp; Tech Training Hours</div>
+                  <p>@ Rs. 500 ($1.79) per hour from 20% IT &amp; tech labs share ({formatDualMoney(techSharePKR)})</p>
                 </div>
               </div>
 
@@ -185,9 +213,9 @@ function ImpactSimulator({ onDonateClick }) {
                 <button
                   type="button"
                   className="btn btn-primary btn-shimmer"
-                  onClick={() => onDonateClick(`Calculated Impact Sponsorship (${formatMoney(amountPKR)})`)}
+                  onClick={() => onDonateClick(`Support our Institutes and Projects (${formatDualMoney(amountPKR)})`)}
                 >
-                  Sponsor {formatMoney(amountPKR)} <ArrowRight size={17} />
+                  Sponsor {formatDualMoney(amountPKR)} <ArrowRight size={17} />
                 </button>
               </div>
             </div>

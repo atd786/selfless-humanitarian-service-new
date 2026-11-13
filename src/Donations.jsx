@@ -31,30 +31,30 @@ function Donations({ selectedProject }) {
 
   const tiers = [
     {
-      title: "Sponsor a Child's Education",
-      amountPKR: "PKR 7,500",
-      amountUSD: "~$27 / month",
-      desc: "Provides 100% free tuition, English textbooks, notebooks, stationery, and uniforms for one primary student.",
+      title: "Sponsor a Child's Tuition",
+      amountPKR: "PKR 5,500 / mo",
+      amountUSD: "USD 20 / month",
+      desc: "Provides 100% free tuition, English textbooks, notebooks, stationery, and uniforms for one student.",
       tag: "Most Popular"
     },
     {
-      title: "Nutritious Daily Meals",
-      amountPKR: "PKR 15,000",
-      amountUSD: "~$55 / month",
-      desc: "Funds daily wholesome meals and fruit snacks for children arriving without morning breakfast.",
+      title: "Daily Nutritious Student Meals",
+      amountPKR: "PKR 11,000 / mo",
+      amountUSD: "USD 40 / month",
+      desc: "Funds daily wholesome meals between study sessions so impoverished children never study on an empty stomach.",
       tag: "Vital Care"
     },
     {
       title: "High School Lab & Desk Fund",
       amountPKR: "PKR 45,000",
-      amountUSD: "~$160 one-time",
+      amountUSD: "$160 one-time",
       desc: "Equips our expanding classrooms with durable desks, ceiling fans, lighting, and English board curriculum sets.",
       tag: "Expansion"
     },
     {
-      title: "Vocational IT Equipment",
+      title: "IT and Vocational Training Equipment",
       amountPKR: "PKR 85,000",
-      amountUSD: "~$300 one-time",
+      amountUSD: "$300 one-time",
       desc: "Sponsors workstation PCs, electronics lab toolkits, and test benches for our technical training institute.",
       tag: "Career Launch"
     }

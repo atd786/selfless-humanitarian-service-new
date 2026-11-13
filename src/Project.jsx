@@ -167,7 +167,18 @@ function Project({ onDonateClick }) {
                 </ul>
               </div>
 
-              {/* Courses Grid Preview */}
+              <div className="project-cta-row">
+                <button 
+                  className="btn btn-accent"
+                  onClick={() => onDonateClick("IT and Vocational Training Equipment PKR 85,000, $300 one-time")}
+                >
+                  <Heart size={16} fill="currentColor" /> Fund Technical Institute
+                </button>
+              </div>
+            </div>
+
+            <div className="project-image-column">
+              {/* Courses Grid Preview (No Image for Project 2) */}
               <div className="courses-preview-section">
                 <h5 className="courses-title">Envisioned Short Courses:</h5>
                 <div className="courses-grid">
@@ -180,28 +191,6 @@ function Project({ onDonateClick }) {
                       </div>
                     </div>
                   ))}
-                </div>
-              </div>
-
-              <div className="project-cta-row">
-                <button 
-                  className="btn btn-accent"
-                  onClick={() => onDonateClick("Project 2: Technical Training Institute")}
-                >
-                  <Heart size={16} fill="currentColor" /> Fund Technical Institute
-                </button>
-              </div>
-            </div>
-
-            <div className="project-image-column">
-              <div className="project-image-wrapper">
-                <img 
-                  src="./image 2.png" 
-                  alt="Technical institute vocational students" 
-                  className="project-image"
-                />
-                <div className="project-badge-floating badge-accent">
-                  <Wrench size={18} /> Vocational Skills Lab
                 </div>
               </div>
 

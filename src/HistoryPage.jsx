@@ -55,9 +55,9 @@ function HistoryPage({ onNavigate, onDonateClick }) {
     },
     {
       year: "2025–2026",
-      title: "The Next Decade: High School & Technical Institute",
-      subtitle: "Institutional Scaling & Career Skills",
-      desc: "With 10 years of proven grassroots success, the Board launched the strategic initiative to establish a dedicated Secondary High School (Grades 6–10) and a Technical & Vocational Training Institute offering 6 certified short courses for immediate youth employment.",
+      title: "SECP Registration & The Next Era: IT & Technical Training Institute",
+      subtitle: "Institutional Scaling, High School & Other Projects",
+      desc: "With 10 years of proven grassroots success, 50+ active KG–Grade 5 students, and formal SECP registration, the Board is launching our next era: the IT and Technical Training Institute, Secondary High School (Grades 6–10), and other community development projects.",
       icon: <Heart size={20} />
     }
   ];

@@ -33,50 +33,52 @@ function DonatePage({ onNavigate, onDonateClick }) {
   const tiers = [
     {
       id: "child-1",
-      title: "Sponsor 1 Student",
-      usd: 25,
-      pkr: 7000,
+      title: "Sponsor a Child's Tuition",
+      usd: 20,
+      pkr: 5500,
       frequency: "per month",
-      desc: "Covers complete English-medium schooling, full textbook set, uniform, and daily morning meal.",
+      desc: "Provides 100% free tuition, English textbooks, notebooks, stationery, and uniforms for one child.",
       badge: "Most Popular",
-      impact: "Transforms 1 child's educational trajectory permanently"
+      impact: "PKR 5,500/mo or USD 20/mo — transforms 1 student's education"
     },
     {
-      id: "child-2",
-      title: "Sponsor 2 Students",
-      usd: 50,
-      pkr: 14000,
+      id: "meals",
+      title: "Daily Nutritious Student Meals",
+      usd: 40,
+      pkr: 11000,
       frequency: "per month",
-      desc: "Supports two siblings or classmates with full tuition, meals, and evening academy homework tutoring.",
-      impact: "Lifts an entire household's educational prospects"
-    },
-    {
-      id: "classroom",
-      title: "Sponsor a Classroom (10 Students)",
-      usd: 250,
-      pkr: 70000,
-      frequency: "per month",
-      desc: "Funds the operational costs, books, nutritious meals, and dedicated teacher honorarium for a 10-student cohort.",
-      badge: "High Impact",
-      impact: "Provides sustainable classroom operations in Shahdara"
-    },
-    {
-      id: "vocational",
-      title: "Equip a Vocational Lab Seat",
-      usd: 350,
-      pkr: 100000,
-      frequency: "one-time",
-      desc: "Provides a complete student toolkit (soldering station, diagnostic tools, or computer workstation) for certified vocational trainees.",
-      impact: "Launches 1 youth into an immediate technical wage career"
+      desc: "Ensures poor students receive healthy food between study sessions and do not study on an empty stomach.",
+      badge: "Vital Care",
+      impact: "PKR 11,000/mo or USD 40/mo — daily nutrition support"
     },
     {
       id: "high-school",
-      title: "High School Expansion Sponsor",
-      usd: 500,
-      pkr: 140000,
-      frequency: "one-time or monthly",
-      desc: "Contributes directly to science lab benches, computer workstations, and secondary school classroom acquisition.",
-      impact: "Helps construct the first free high school in Shahdara"
+      title: "High School Lab & Desk Fund",
+      usd: 160,
+      pkr: 45000,
+      frequency: "one-time",
+      desc: "Equips expanding secondary school classrooms with durable desks, science benches, lighting, and curriculum sets.",
+      impact: "PKR 45,000 / $160 one-time — expands High School infrastructure"
+    },
+    {
+      id: "vocational",
+      title: "IT and Vocational Training Equipment",
+      usd: 300,
+      pkr: 85000,
+      frequency: "one-time",
+      desc: "Funds computer workstations, electronics toolkits, and practical vocational training benches for youth.",
+      badge: "High Impact",
+      impact: "PKR 85,000 / $300 one-time — launches job-ready technical skills"
+    },
+    {
+      id: "general",
+      title: "Support our Institutes and Projects (any amount)",
+      isAnyAmount: true,
+      usd: null,
+      pkr: null,
+      frequency: "any amount",
+      desc: "Contribute any amount in PKR or USD toward our elementary school, high school expansion, daily meals, or technical training institute.",
+      impact: "100% zero-overhead direct campus support"
     }
   ];
 
@@ -89,12 +91,15 @@ function DonatePage({ onNavigate, onDonateClick }) {
 
     setIsSubmitting(true);
 
+    const formatTierPrice = (t) =>
+      t.isAnyAmount ? "Any Amount (PKR / USD)" : `PKR ${t.pkr.toLocaleString()} / $${t.usd} ${t.frequency}`;
+
     const payload = {
       name: formData.name,
       email: formData.email,
       phone: formData.phone || "",
       subject: formData.inquiryType,
-      tier_or_amount: `${selectedTierObj.title} (${currency === "USD" ? "$" + selectedTierObj.usd : "PKR " + selectedTierObj.pkr})`,
+      tier_or_amount: `${selectedTierObj.title} (${formatTierPrice(selectedTierObj)})`,
       message: formData.message || ""
     };
 
@@ -174,9 +179,13 @@ function DonatePage({ onNavigate, onDonateClick }) {
                 
                 <div className="tier-price-box">
                   <span className="tier-amount">
-                    {currency === "USD" ? `$${tier.usd}` : `Rs. ${tier.pkr.toLocaleString()}`}
+                    {tier.isAnyAmount
+                      ? "Any Amount"
+                      : currency === "USD"
+                      ? `$${tier.usd} / PKR ${tier.pkr.toLocaleString()}`
+                      : `PKR ${tier.pkr.toLocaleString()} / $${tier.usd}`}
                   </span>
-                  <span className="tier-freq">/ {tier.frequency}</span>
+                  <span className="tier-freq">{tier.isAnyAmount ? "(PKR or USD)" : `/ ${tier.frequency}`}</span>
                 </div>
 
                 <p className="tier-card-desc">{tier.desc}</p>
@@ -190,7 +199,11 @@ function DonatePage({ onNavigate, onDonateClick }) {
                   onClick={(e) => {
                     e.stopPropagation();
                     setSelectedTier(tier.id);
-                    onDonateClick(tier.title);
+                    onDonateClick(
+                      tier.isAnyAmount
+                        ? "Support our Institutes and Projects (any amount)"
+                        : `${tier.title} (PKR ${tier.pkr.toLocaleString()} / $${tier.usd})`
+                    );
                   }}
                 >
                   <Heart size={15} fill="currentColor" /> Sponsor This Now
@@ -203,7 +216,12 @@ function DonatePage({ onNavigate, onDonateClick }) {
           <div className="selected-summary-bar">
             <div className="summary-left">
               <span className="summary-lbl">Selected Initiative:</span>
-              <span className="summary-name">{selectedTierObj.title} ({currency === "USD" ? `$${selectedTierObj.usd}` : `Rs. ${selectedTierObj.pkr.toLocaleString()}`})</span>
+              <span className="summary-name">
+                {selectedTierObj.title}{" "}
+                {selectedTierObj.isAnyAmount
+                  ? "(Any Amount — PKR / USD)"
+                  : `(PKR ${selectedTierObj.pkr.toLocaleString()} / $${selectedTierObj.usd} ${selectedTierObj.frequency})`}
+              </span>
             </div>
             <div className="summary-right">
               <button 
@@ -254,12 +272,8 @@ function DonatePage({ onNavigate, onDonateClick }) {
                   <span className="info-val">Shahdara, Lahore, Punjab, Pakistan</span>
                 </div>
                 <div className="info-row">
-                  <span className="info-title">Official Donation Email:</span>
-                  <span className="info-val">donate@selflesshumanitarianservice.com</span>
-                </div>
-                <div className="info-row">
-                  <span className="info-title">General &amp; Governance Emails:</span>
-                  <span className="info-val">contact@selflesshumanitarianservice.com • admin@selflesshumanitarianservice.com</span>
+                  <span className="info-title">Official Contact &amp; Donation Email:</span>
+                  <span className="info-val">selflesshumanitarianservice@gmail.com</span>
                 </div>
                 <div className="info-row">
                   <span className="info-title">Direct Director Contact:</span>

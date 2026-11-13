@@ -63,11 +63,11 @@ function Header({ currentPage = "home", onNavigate, onDonateClick }) {
           </div>
           <div className="top-bar-right">
             <a 
-              href="mailto:info@selflesshumanitarianservice.com"
+              href="mailto:selflesshumanitarianservice@gmail.com"
               className="top-email-link"
               title="Email Selfless Humanitarian Service"
             >
-              info@selflesshumanitarianservice.com
+              selflesshumanitarianservice@gmail.com
             </a>
             <a 
               href="https://wa.me/923061064907?text=Hello%20Dr.%20Khushro,%20I%20would%20like%20to%20learn%20more%20about%20Selfless%20Humanitarian%20Service" 
@@ -92,7 +92,8 @@ function Header({ currentPage = "home", onNavigate, onDonateClick }) {
             <img src="./logo.png" alt="Selfless NGO Logo" className="nav-logo" />
             <div className="nav-brand-text">
               <span className="brand-title">Selfless</span>
-              <span className="brand-subtitle">Humanitarian Service</span>
+              <span className="brand-title">Humanitarian</span>
+              <span className="brand-title">Service</span>
             </div>
           </a>
 

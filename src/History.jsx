@@ -27,14 +27,14 @@ function History() {
     },
     {
       year: "Today",
-      title: "50+ Active Students (KG to Grade 5)",
-      desc: "Currently educating 50 underprivileged students with complete books, uniforms, safe classrooms, and daily foundational learning.",
+      title: "SECP Registration & 50+ Active Students",
+      desc: "Formally registered as an SECP National NGO, currently educating 50+ underprivileged students (KG to Grade 5) with complete books, uniforms, safe classrooms, and daily foundational learning.",
       icon: <GraduationCap size={18} />
     },
     {
       year: "The Next Era",
-      title: "SECP Registration & Expansion",
-      desc: "Formally registered as an SECP National NGO, scaling up to launch an English-medium High School, an Evening Academy, and a Technical Training Institute.",
+      title: "IT & Technical Training Institute & Other Projects",
+      desc: "Expanding to launch our IT and Technical Training Institute, English-medium High School & Evening Academy, and other community development projects.",
       icon: <ShieldCheck size={18} />
     }
   ];

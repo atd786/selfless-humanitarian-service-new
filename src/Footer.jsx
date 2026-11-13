@@ -68,8 +68,8 @@ function Footer({ onNavigate }) {
             <li><a href="#/projects" onClick={(e) => handleLink(e, "projects", "#/projects")}>High School Expansion (Grades 6–10)</a></li>
             <li><a href="#/projects" onClick={(e) => handleLink(e, "projects", "#/projects")}>Technical Training Institute (6 Courses)</a></li>
             <li><a href="#/projects" onClick={(e) => handleLink(e, "projects", "#/projects")}>Daily Student Nutrition Care</a></li>
-            <li><a href="#/donate" onClick={(e) => handleLink(e, "donate", "#/donate")}>Sponsor A Child ($25/mo)</a></li>
-            <li><a href="#/donate" onClick={(e) => handleLink(e, "donate", "#/donate")}>Vocational Lab Seat ($350)</a></li>
+            <li><a href="#/donate" onClick={(e) => handleLink(e, "donate", "#/donate")}>Sponsor A Child (PKR 5,500 / $20 mo)</a></li>
+            <li><a href="#/donate" onClick={(e) => handleLink(e, "donate", "#/donate")}>IT &amp; Vocational Training Equipment (PKR 85,000 / $300)</a></li>
           </ul>
         </div>
 
@@ -97,17 +97,8 @@ function Footer({ onNavigate }) {
             <li>
               <Mail size={18} className="footer-contact-icon" />
               <span>
-                <strong>Official Inquiries:</strong><br />
-                <a href="mailto:info@selflesshumanitarianservice.com">info@selflesshumanitarianservice.com</a><br />
-                <a href="mailto:contact@selflesshumanitarianservice.com">contact@selflesshumanitarianservice.com</a>
-              </span>
-            </li>
-            <li>
-              <Mail size={18} className="footer-contact-icon" />
-              <span>
-                <strong>Donation &amp; Governance Desk:</strong><br />
-                <a href="mailto:donate@selflesshumanitarianservice.com">donate@selflesshumanitarianservice.com</a><br />
-                <a href="mailto:admin@selflesshumanitarianservice.com">admin@selflesshumanitarianservice.com</a>
+                <strong>Official Email:</strong><br />
+                <a href="mailto:selflesshumanitarianservice@gmail.com">selflesshumanitarianservice@gmail.com</a>
               </span>
             </li>
           </ul>

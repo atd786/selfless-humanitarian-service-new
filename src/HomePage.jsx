@@ -11,7 +11,7 @@ import Donations from "./Donations";
 function HomePage({ onDonateClick, selectedCause }) {
   return (
     <div className="home-page">
-      <Hero onDonateClick={(cause) => onDonateClick(cause || "General Educational Fund")} />
+      <Hero onDonateClick={(cause) => onDonateClick(cause || "Support our Institutes and Projects (any amount)")} />
       <MissionVision />
       <Project onDonateClick={onDonateClick} />
       <ImpactSimulator onDonateClick={onDonateClick} />

@@ -5,17 +5,17 @@ import { X, Heart, MessageSquare, Copy, Check, ShieldCheck, MapPin, Mail } from 
 function DonationModal({ isOpen, onClose, defaultProject = "" }) {
   if (!isOpen) return null;
 
-  const [selectedCause, setSelectedCause] = useState(defaultProject || "General Educational Fund");
+  const [selectedCause, setSelectedCause] = useState(defaultProject || "Support our Institutes and Projects (any amount)");
   const [copied, setCopied] = useState(false);
 
   const displayPhone = "+92 306 1064907";
 
   const causes = [
-    "Project 1: High School & Evening Academy",
-    "Project 2: Technical Training Institute",
-    "Sponsor a Child's Tuition (PKR 7,500/mo)",
-    "Daily Nutritious Student Meals (PKR 15,000/mo)",
-    "General Educational Fund"
+    "Sponsor a Child's Tuition (PKR 5,500/mo or USD 20/mo)",
+    "Daily Nutritious Student Meals (PKR 11,000/mo or USD 40/mo)",
+    "High School Lab & Desk Fund PKR 45,000, $160 one-time",
+    "IT and Vocational Training Equipment PKR 85,000, $300 one-time",
+    "Support our Institutes and Projects (any amount)"
   ];
 
   const handleCopy = () => {
@@ -65,7 +65,7 @@ function DonationModal({ isOpen, onClose, defaultProject = "" }) {
               <strong className="coord-name">Dr. Khushro Shahookar (Ph.D., USA)</strong>
               <span className="coord-phone">{displayPhone}</span>
               <span className="coord-email">
-                <Mail size={13} /> donate@selflesshumanitarianservice.com
+                <Mail size={13} /> selflesshumanitarianservice@gmail.com
               </span>
             </div>
 

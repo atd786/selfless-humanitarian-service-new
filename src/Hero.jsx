@@ -30,9 +30,9 @@ const slides = [
 ];
 
 const quickCauses = [
-  { id: "High School Tuition Sponsorship", label: "Child Monthly Tuition", amount: "PKR 7,500", sub: "1 student full school month" },
-  { id: "Daily Nutritious Student Meals", label: "Mid-Day Meals Fund", amount: "PKR 15,000", sub: "Nourish 10 scholars monthly" },
-  { id: "Selfless Technical Institute Fund", label: "Technical Lab Kit", amount: "PKR 35,000", sub: "IT & vocational hardware" }
+  { id: "Sponsor a Child's Tuition (PKR 5,500/mo or USD 20/mo)", label: "Sponsor a Child's Tuition", amount: "PKR 5,500 / $20", sub: "1 student per month" },
+  { id: "Daily Nutritious Student Meals (PKR 11,000/mo or USD 40/mo)", label: "Daily Nutritious Student Meals", amount: "PKR 11,000 / $40", sub: "Monthly campus nutrition" },
+  { id: "IT and Vocational Training Equipment PKR 85,000, $300 one-time", label: "IT & Vocational Training Equipment", amount: "PKR 85,000 / $300", sub: "One-time lab workstations" }
 ];
 
 function Hero({ onDonateClick }) {
@@ -83,7 +83,7 @@ function Hero({ onDonateClick }) {
             <div className="hero-actions">
               <button
                 className="btn btn-accent btn-shimmer hero-cta-btn"
-                onClick={() => onDonateClick("General Educational Fund")}
+                onClick={() => onDonateClick("Sponsor a Child's Tuition (PKR 5,500/mo or USD 20/mo)")}
               >
                 <Heart size={19} fill="currentColor" /> Sponsor a Child Today
               </button>

@@ -110,7 +110,7 @@ function MissionVision() {
             <GraduationCap size={22} className="pillar-icon" />
             <div>
               <h4>Quality English Education</h4>
-              <p>Overcoming the English deficit that holds government students back</p>
+              <p>Overcoming English deficit that holds back students in government schools</p>
             </div>
           </div>
 
@@ -118,7 +118,7 @@ function MissionVision() {
             <HeartHandshake size={22} className="pillar-icon" />
             <div>
               <h4>Daily Nutritious Meals</h4>
-              <p>Ensuring poor students receive healthy food between study sessions</p>
+              <p>Ensuring poor students receive healthy food between study sessions and do not study on an empty stomach.</p>
             </div>
           </div>
 
