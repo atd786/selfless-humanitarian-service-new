@@ -130,16 +130,17 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 20px;
   height: 76px;
 }
 
 .nav-brand {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   text-decoration: none;
   transition: transform 0.2s ease;
-  min-width: 0;
+  flex-shrink: 0;
 }
 
 .nav-brand:hover {
@@ -157,11 +158,11 @@
 .nav-brand-text {
   display: flex;
   flex-direction: column;
-  min-width: 0;
+  flex-shrink: 0;
 }
 
 .brand-title {
-  font-size: 1.35rem;
+  font-size: 1.3rem;
   font-weight: 800;
   color: var(--primary);
   line-height: 1.1;
@@ -170,11 +171,11 @@
 }
 
 .brand-subtitle {
-  font-size: 0.74rem;
+  font-size: 0.7rem;
   font-weight: 700;
   color: var(--text-muted);
   text-transform: uppercase;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.05em;
   white-space: nowrap;
 }
 
@@ -182,14 +183,15 @@
 .nav-desktop {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 5px;
+  flex-shrink: 0;
 }
 
 .nav-link {
-  font-size: 0.88rem;
+  font-size: 0.84rem;
   font-weight: 600;
   color: var(--text-dark);
-  padding: 7px 11px;
+  padding: 6px 9px;
   border-radius: var(--radius-full);
   position: relative;
   text-decoration: none;
@@ -201,8 +203,8 @@
   content: '';
   position: absolute;
   bottom: 2px;
-  left: 12px;
-  right: 12px;
+  left: 10px;
+  right: 10px;
   width: auto;
   height: 2px;
   transform: scaleX(0);
@@ -228,10 +230,10 @@
 }
 
 .nav-donate-btn {
-  padding: 10px 18px;
-  font-size: 0.9rem;
+  padding: 9px 16px;
+  font-size: 0.86rem;
   font-weight: 700;
-  margin-left: 6px;
+  margin-left: 4px;
   box-shadow: 0 4px 14px rgba(136, 0, 21, 0.35);
   animation: pulseGlow 3s infinite;
   white-space: nowrap;
@@ -282,17 +284,30 @@
   -webkit-overflow-scrolling: touch;
 }
 
-@media (max-width: 1120px) {
+@media (max-width: 1200px) {
+  .nav-logo {
+    height: 44px;
+  }
+  .brand-title {
+    font-size: 1.2rem;
+  }
+  .brand-subtitle {
+    font-size: 0.65rem;
+  }
   .nav-desktop {
-    gap: 10px;
+    gap: 2px;
   }
   .nav-link {
-    font-size: 0.84rem;
-    padding: 6px 3px;
+    font-size: 0.79rem;
+    padding: 6px 7px;
+  }
+  .nav-donate-btn {
+    padding: 8px 13px;
+    font-size: 0.82rem;
   }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1080px) {
   .top-bar-left {
     gap: 10px;
   }
