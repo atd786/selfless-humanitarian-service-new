@@ -29,10 +29,9 @@ function Footer({ onNavigate }) {
         {/* Brand Column */}
         <div className="footer-col footer-col-brand">
           <div className="footer-brand" onClick={(e) => handleLink(e, "home", "#/")} style={{ cursor: "pointer" }}>
-            <img src="./logo.png" alt="Selfless NGO Logo" className="footer-logo" />
+            <img src="./logo.png" alt="Selfless Humanitarian Service Logo" className="footer-logo" />
             <div>
-              <span className="footer-brand-name">Selfless</span>
-              <span className="footer-brand-sub">Humanitarian Service</span>
+              <span className="footer-brand-name">Selfless Humanitarian Service</span>
             </div>
           </div>
           <p className="footer-about-text">
@@ -56,6 +55,7 @@ function Footer({ onNavigate }) {
             <li><a href="#/history" onClick={(e) => handleLink(e, "history", "#/history")}>Our 10-Year History</a></li>
             <li><a href="#/team" onClick={(e) => handleLink(e, "team", "#/team")}>Board of Directors</a></li>
             <li><a href="#/gallery" onClick={(e) => handleLink(e, "gallery", "#/gallery")}>Campus Photo Gallery</a></li>
+            <li><a href="#/volunteer" onClick={(e) => handleLink(e, "volunteer", "#/volunteer")}>Volunteer Opportunities</a></li>
             <li><a href="#/donate" onClick={(e) => handleLink(e, "donate", "#/donate")}>Contact & Donate</a></li>
           </ul>
         </div>
@@ -67,6 +67,7 @@ function Footer({ onNavigate }) {
             <li><a href="#/projects" onClick={(e) => handleLink(e, "projects", "#/projects")}>Free Elementary School (KG–5)</a></li>
             <li><a href="#/projects" onClick={(e) => handleLink(e, "projects", "#/projects")}>High School Expansion (Grades 6–10)</a></li>
             <li><a href="#/projects" onClick={(e) => handleLink(e, "projects", "#/projects")}>Technical Training Institute (6 Courses)</a></li>
+            <li><a href="#/projects" onClick={(e) => handleLink(e, "projects", "#/projects")}>Tailoring Training Centre for Girls</a></li>
             <li><a href="#/projects" onClick={(e) => handleLink(e, "projects", "#/projects")}>Daily Student Nutrition Care</a></li>
             <li><a href="#/donate" onClick={(e) => handleLink(e, "donate", "#/donate")}>Sponsor A Child (PKR 5,500 / $20 mo)</a></li>
             <li><a href="#/donate" onClick={(e) => handleLink(e, "donate", "#/donate")}>IT &amp; Vocational Training Equipment (PKR 85,000 / $300)</a></li>

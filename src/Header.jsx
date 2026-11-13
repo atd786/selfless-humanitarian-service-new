@@ -34,6 +34,7 @@ function Header({ currentPage = "home", onNavigate, onDonateClick }) {
     { name: "Our History", key: "history", href: "#/history" },
     { name: "Leadership", key: "team", href: "#/team" },
     { name: "Gallery", key: "gallery", href: "#/gallery" },
+    { name: "Volunteer", key: "volunteer", href: "#/volunteer" },
     { name: "Contact & Donate", key: "donate", href: "#/donate" },
   ];
 
@@ -89,7 +90,7 @@ function Header({ currentPage = "home", onNavigate, onDonateClick }) {
             className="nav-brand"
             onClick={(e) => handleNavClick(e, "home", "#/")}
           >
-            <img src="./logo.png" alt="Selfless NGO Logo" className="nav-logo" />
+            <img src="./logo.png" alt="Selfless Humanitarian Service Logo" className="nav-logo" />
             <div className="nav-brand-text">
               <span className="brand-title">Selfless</span>
               <span className="brand-title">Humanitarian</span>

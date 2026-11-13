@@ -52,13 +52,23 @@ function DonatePage({ onNavigate, onDonateClick }) {
       impact: "PKR 11,000/mo or USD 40/mo — daily nutrition support"
     },
     {
+      id: "classroom-10",
+      title: "Sponsor a Classroom (10 Students)",
+      usd: 200,
+      pkr: 55000,
+      frequency: "per month",
+      desc: "Sponsors complete monthly schooling, teacher support, textbooks, and learning supplies for a classroom of 10 students.",
+      badge: "High Impact",
+      impact: "PKR 55,000/mo or $200/mo — sustains an entire classroom"
+    },
+    {
       id: "high-school",
       title: "High School Lab & Desk Fund",
       usd: 160,
       pkr: 45000,
       frequency: "one-time",
       desc: "Equips expanding secondary school classrooms with durable desks, science benches, lighting, and curriculum sets.",
-      impact: "PKR 45,000 / $160 one-time — expands High School infrastructure"
+      impact: "PKR 45,000 or $160 one-time — expands High School infrastructure"
     },
     {
       id: "vocational",
@@ -67,8 +77,8 @@ function DonatePage({ onNavigate, onDonateClick }) {
       pkr: 85000,
       frequency: "one-time",
       desc: "Funds computer workstations, electronics toolkits, and practical vocational training benches for youth.",
-      badge: "High Impact",
-      impact: "PKR 85,000 / $300 one-time — launches job-ready technical skills"
+      badge: "Career Launch",
+      impact: "PKR 85,000 or $300 one-time — launches job-ready technical skills"
     },
     {
       id: "general",
@@ -412,7 +422,7 @@ function DonatePage({ onNavigate, onDonateClick }) {
             <div className="faq-card">
               <h4 className="faq-q">How do I know my donation actually reaches the students?</h4>
               <p className="faq-a">
-                Selfless operates on an absolute zero executive compensation model. The Directors take zero salaries. Donors receive direct term academic reports, student photographs, and direct verification of fees, uniforms, and meals.
+                Selfless Humanitarian Service operates on an absolute zero executive compensation model. The Directors take zero salaries. Donors receive direct term academic reports, student photographs, and direct verification of fees, uniforms, and meals.
               </p>
             </div>
 
@@ -431,7 +441,7 @@ function DonatePage({ onNavigate, onDonateClick }) {
             </div>
 
             <div className="faq-card">
-              <h4 className="faq-q">Is Selfless officially registered with the Government?</h4>
+              <h4 className="faq-q">Is Selfless Humanitarian Service officially registered with the Government?</h4>
               <p className="faq-a">
                 Yes, Selfless Humanitarian Service is registered with the Securities and Exchange Commission of Pakistan (SECP) under Section 42 of the Companies Act as a recognized National NGO.
               </p>

@@ -90,7 +90,7 @@ function AboutPage({ onNavigate, onDonateClick }) {
 
             <div className="about-image-col">
               <div className="about-framed-image">
-                <img src="./banner.png" alt="Selfless School Campus" className="framed-img" />
+                <img src="./image1.png" alt="Selfless Humanitarian Service School Campus" className="framed-img" />
                 <div className="img-floating-caption">
                   <MapPin size={16} /> Campus in Shahdara, Lahore, Pakistan
                 </div>
@@ -110,6 +110,21 @@ function AboutPage({ onNavigate, onDonateClick }) {
                     <span className="stat-big">KG–5</span>
                     <span className="stat-caption">Current Grades</span>
                   </div>
+                </div>
+                <div
+                  className="stats-expansion-note"
+                  style={{
+                    marginTop: "14px",
+                    paddingTop: "12px",
+                    borderTop: "1px solid rgba(255, 255, 255, 0.18)",
+                    textAlign: "center",
+                    fontSize: "0.92rem",
+                    fontWeight: 600,
+                    color: "#fde68a",
+                    letterSpacing: "0.01em"
+                  }}
+                >
+                  Soon expanding to Grade 10 with English medium of studies
                 </div>
               </div>
             </div>

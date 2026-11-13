@@ -12,7 +12,7 @@ const slides = [
   {
     image: "/images/hero-slider-2.jpg",
     title: "Equipping Future Tech & Vocational Leaders",
-    subtitle: "Establishing the Selfless Technical Training Institute to impart computer IT, coding, digital arts, and market-ready vocational skills.",
+    subtitle: "Establishing the Selfless Humanitarian Service Technical Training Institute to impart computer IT, coding, digital arts, and market-ready vocational skills.",
     tag: "Technical Training Initiative"
   },
   {
@@ -30,9 +30,10 @@ const slides = [
 ];
 
 const quickCauses = [
-  { id: "Sponsor a Child's Tuition (PKR 5,500/mo or USD 20/mo)", label: "Sponsor a Child's Tuition", amount: "PKR 5,500 / $20", sub: "1 student per month" },
-  { id: "Daily Nutritious Student Meals (PKR 11,000/mo or USD 40/mo)", label: "Daily Nutritious Student Meals", amount: "PKR 11,000 / $40", sub: "Monthly campus nutrition" },
-  { id: "IT and Vocational Training Equipment PKR 85,000, $300 one-time", label: "IT & Vocational Training Equipment", amount: "PKR 85,000 / $300", sub: "One-time lab workstations" }
+  { id: "Sponsor a Child's Tuition (PKR 5,500/mo or USD 20/mo)", label: "Sponsor a Child's Tuition", amount: "PKR 5,500 / $20 mo", sub: "1 student per month" },
+  { id: "Daily Nutritious Student Meals (PKR 11,000/mo or USD 40/mo)", label: "Daily Nutritious Student Meals", amount: "PKR 11,000 / $40 mo", sub: "Monthly campus nutrition" },
+  { id: "Sponsor a Classroom (10 Students) (PKR 55,000/mo or $200/mo)", label: "Sponsor a Classroom (10 Students)", amount: "PKR 55,000 / $200 mo", sub: "Full classroom monthly support" },
+  { id: "Support our Institutes and Projects (any amount)", label: "Support our Institutes and Projects", amount: "Any Amount", sub: "Flexible PKR / USD giving" }
 ];
 
 function Hero({ onDonateClick }) {

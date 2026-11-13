@@ -56,7 +56,7 @@ function Gallery() {
           <div className="badge-tag">
             <Image size={14} /> Ground Realities
           </div>
-          <h2 className="section-title">Life at Selfless School</h2>
+          <h2 className="section-title">Life at Selfless Humanitarian Service</h2>
           <p className="section-subtitle">
             A glimpse into the daily joy, focus, and transformation taking place 
             inside our Shahdara classrooms.
@@ -66,28 +66,10 @@ function Gallery() {
         {/* Filter Buttons */}
         <div className="gallery-filter-bar">
           <button
-            className={`filter-btn ${activeFilter === "all" ? "active" : ""}`}
+            className="filter-btn active"
             onClick={() => setActiveFilter("all")}
           >
             All Photos
-          </button>
-          <button
-            className={`filter-btn ${activeFilter === "classroom" ? "active" : ""}`}
-            onClick={() => setActiveFilter("classroom")}
-          >
-            Classrooms & Learning
-          </button>
-          <button
-            className={`filter-btn ${activeFilter === "students" ? "active" : ""}`}
-            onClick={() => setActiveFilter("students")}
-          >
-            Our Students
-          </button>
-          <button
-            className={`filter-btn ${activeFilter === "vocational" ? "active" : ""}`}
-            onClick={() => setActiveFilter("vocational")}
-          >
-            Vocational Skills
           </button>
         </div>
 
@@ -102,8 +84,6 @@ function Gallery() {
               <img src={image.src} alt={image.title} className="gallery-thumbnail" />
               <div className="gallery-overlay">
                 <ZoomIn size={24} className="zoom-icon" />
-                <h4 className="gallery-item-title">{image.title}</h4>
-                <p className="gallery-item-desc">{image.desc}</p>
               </div>
             </div>
           ))}
@@ -131,10 +111,6 @@ function Gallery() {
                 <X size={24} />
               </button>
               <img src={selectedImage.src} alt={selectedImage.title} className="lightbox-image" />
-              <div className="lightbox-caption">
-                <h3>{selectedImage.title}</h3>
-                <p>{selectedImage.desc}</p>
-              </div>
             </div>
           </div>
         )}

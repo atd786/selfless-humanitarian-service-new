@@ -1,20 +1,29 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./DonationModal.css";
 import { X, Heart, MessageSquare, Copy, Check, ShieldCheck, MapPin, Mail } from "lucide-react";
 
 function DonationModal({ isOpen, onClose, defaultProject = "" }) {
-  if (!isOpen) return null;
-
-  const [selectedCause, setSelectedCause] = useState(defaultProject || "Support our Institutes and Projects (any amount)");
+  const [selectedCause, setSelectedCause] = useState(
+    defaultProject || "Support our Institutes and Projects (any amount)"
+  );
   const [copied, setCopied] = useState(false);
+
+  useEffect(() => {
+    if (defaultProject) {
+      setSelectedCause(defaultProject);
+    }
+  }, [defaultProject]);
+
+  if (!isOpen) return null;
 
   const displayPhone = "+92 306 1064907";
 
   const causes = [
     "Sponsor a Child's Tuition (PKR 5,500/mo or USD 20/mo)",
     "Daily Nutritious Student Meals (PKR 11,000/mo or USD 40/mo)",
-    "High School Lab & Desk Fund PKR 45,000, $160 one-time",
-    "IT and Vocational Training Equipment PKR 85,000, $300 one-time",
+    "Sponsor a Classroom (10 Students) (PKR 55,000/mo or $200/mo)",
+    "High School Lab & Desk Fund (PKR 45,000 or $160 one-time)",
+    "IT and Vocational Training Equipment (PKR 85,000 or $300 one-time)",
     "Support our Institutes and Projects (any amount)"
   ];
 
@@ -39,7 +48,7 @@ function DonationModal({ isOpen, onClose, defaultProject = "" }) {
           <div className="modal-heart-icon">
             <Heart size={26} fill="currentColor" />
           </div>
-          <h3 className="modal-title">Partner With Selfless NGO</h3>
+          <h3 className="modal-title">Partner With Selfless Humanitarian Services</h3>
           <p className="modal-subtitle">
             SECP-Registered National NGO • Shahdara, Lahore, Pakistan
           </p>

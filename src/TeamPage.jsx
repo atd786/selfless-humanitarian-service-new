@@ -50,10 +50,9 @@ function TeamPage({ onNavigate, onDonateClick }) {
       tag: "Master Educator & School Administrator",
       quote: "When you give a poor child the same English books and respect that wealthy children receive, their eyes ignite. Poverty cannot stop an educated, determined mind.",
       bio: [
-        "Mr. Solomon Samuel Bhatti brings over three decades of distinguished teaching and school administration experience in Punjab. Holding both a Master of Arts and a Master of Education, Mr. Solomon has dedicated his life to reforming early childhood and primary education.",
+        "Mr. Solomon Samuel Bhatti brings distinguished teaching and school administration experience in Punjab. Holding both a Master of Arts and a Master of Education, Mr. Solomon has dedicated his life to reforming early childhood and primary education.",
         "Since the school's inception in 2015, Mr. Solomon has served as the on-ground Principal, arriving each morning at 7:30 AM to oversee classroom instruction, manage teacher mentorship, and counsel student families.",
-        "Understanding that parents in Shahdara are frequently illiterate daily-wage laborers, Mr. Solomon instituted the free daily Evening Homework Academy (3:00 PM – 5:00 PM), personally assisting students with mathematics and English comprehension so they never fall behind.",
-        "Under his strict pedagogical standards, 100% of students completing Grade 5 at Selfless achieve fluent English reading, strong arithmetic foundations, and disciplined civic values."
+        "Under his strict pedagogical standards, 100% of students completing Grade 5 at Selfless Humanitarian Service achieve fluent English reading, strong arithmetic foundations, and disciplined civic values."
       ],
       responsibilities: [
         "Daily academic administration, syllabus planning, and classroom teaching",
@@ -71,7 +70,7 @@ function TeamPage({ onNavigate, onDonateClick }) {
       tag: "Student Welfare & Foundational Pedagogy",
       quote: "Children cannot learn when their stomachs are empty or their spirits are frightened. We treat every child who walks through our door as our own son or daughter.",
       bio: [
-        "Mrs. Sabah Solomon Samuel is a devoted primary educator whose warmth and pedagogical patience form the heartbeat of the Selfless Elementary School in Shahdara.",
+        "Mrs. Sabah Solomon Samuel is a devoted primary educator whose warmth and pedagogical patience form the heartbeat of the Selfless Humanitarian Service Elementary School in Shahdara.",
         "Specializing in early childhood education (Kindergarten through Grade 2), Mrs. Sabah focuses on phonetic reading, foundational vocabulary, and emotional safety, helping children from traumatic home environments transition into enthusiastic learners.",
         "In addition to her classroom responsibilities, Mrs. Sabah personally oversees the Daily Student Nutrition Program, ensuring fresh, wholesome meals and clean drinking water are prepared and distributed to every pupil every single school day.",
         "Her tireless advocacy for young girls' education has helped overcome traditional parental reluctance, resulting in an exemplary 50/50 gender balance across all primary grades in our school."

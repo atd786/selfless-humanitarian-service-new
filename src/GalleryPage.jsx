@@ -69,24 +69,6 @@ const allPhotos = [
     categoryLabel: "Student Progress",
     date: "Shahdara Campus",
     desc: "Grade 5 students completing their elementary curriculum with flying colors, ready for the upcoming High School expansion."
-  },
-  {
-    id: 7,
-    src: "./banner.png",
-    title: "Campus Facility & Learning Space",
-    category: "classroom",
-    categoryLabel: "Classroom Instruction",
-    date: "Shahdara Campus",
-    desc: "A clean, bright, and secure learning environment established in the heart of Shahdara to protect and uplift neighborhood children."
-  },
-  {
-    id: 8,
-    src: "./image 2.png",
-    title: "Classroom Interactive Activity",
-    category: "welfare",
-    categoryLabel: "Welfare & Supplies",
-    date: "Shahdara Campus",
-    desc: "Engaging group reading and learning exercises that foster teamwork, emotional resilience, and mutual respect among students."
   }
 ];
 
@@ -95,11 +77,7 @@ function GalleryPage({ onNavigate, onDonateClick }) {
   const [lightboxIndex, setLightboxIndex] = useState(null);
 
   const categories = [
-    { key: "all", label: "All Photos" },
-    { key: "classroom", label: "Classroom Instruction" },
-    { key: "students", label: "Student Progress" },
-    { key: "vocational", label: "Technical Skills" },
-    { key: "welfare", label: "Welfare & Supplies" },
+    { key: "all", label: "All Photos" }
   ];
 
   const filteredPhotos = activeFilter === "all"
@@ -164,7 +142,7 @@ function GalleryPage({ onNavigate, onDonateClick }) {
                 <div className="gallery-card-img-wrap">
                   <img 
                     src={photo.src} 
-                    alt={photo.title} 
+                    alt="Selfless Humanitarian Service Campus" 
                     className="gallery-card-img" 
                     loading="lazy" 
                   />
@@ -173,15 +151,6 @@ function GalleryPage({ onNavigate, onDonateClick }) {
                       <ZoomIn size={24} /> View Full Photo
                     </span>
                   </div>
-                  <span className="gallery-cat-badge">{photo.categoryLabel}</span>
-                </div>
-
-                <div className="gallery-card-body">
-                  <div className="gallery-card-meta">
-                    <MapPin size={13} /> {photo.date}
-                  </div>
-                  <h3 className="gallery-card-title">{photo.title}</h3>
-                  <p className="gallery-card-desc">{photo.desc}</p>
                 </div>
               </div>
             ))}
@@ -258,15 +227,10 @@ function GalleryPage({ onNavigate, onDonateClick }) {
           <div className="lightbox-content-wrap" onClick={(e) => e.stopPropagation()}>
             <img 
               src={filteredPhotos[lightboxIndex].src} 
-              alt={filteredPhotos[lightboxIndex].title} 
+              alt="Selfless Humanitarian Service Campus" 
               className="lightbox-main-img" 
             />
             <div className="lightbox-caption-bar">
-              <div>
-                <span className="lightbox-cat">{filteredPhotos[lightboxIndex].categoryLabel}</span>
-                <h4 className="lightbox-title">{filteredPhotos[lightboxIndex].title}</h4>
-                <p className="lightbox-desc">{filteredPhotos[lightboxIndex].desc}</p>
-              </div>
               <span className="lightbox-counter">
                 {lightboxIndex + 1} of {filteredPhotos.length}
               </span>

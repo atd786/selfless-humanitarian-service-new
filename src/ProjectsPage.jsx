@@ -163,6 +163,9 @@ function ProjectsPage({ onNavigate, onDonateClick }) {
             <a href="#technical-institute" className="quick-anchor-btn">
               <Cpu size={16} /> 3. Technical Training Institute (Flagship)
             </a>
+            <a href="#tailoring-centre" className="quick-anchor-btn">
+              <Heart size={16} /> 4. Tailoring Training Centre for Girls
+            </a>
           </div>
         </div>
       </section>
@@ -253,7 +256,7 @@ function ProjectsPage({ onNavigate, onDonateClick }) {
           <div className="project-detail-grid reverse-grid">
             <div className="project-visual-content">
               <div className="project-img-frame">
-                <img src="./banner.png" alt="High School Campus Project" className="project-photo" />
+                <img src="./image1.png" alt="High School Campus Project — Selfless Humanitarian Service" className="project-photo" />
                 <div className="photo-tag">Envisioned Campus Expansion</div>
               </div>
 
@@ -273,7 +276,7 @@ function ProjectsPage({ onNavigate, onDonateClick }) {
                 </div>
                 <div className="spec-item">
                   <span className="spec-label">Board Affiliation:</span>
-                  <span className="spec-val">BISE Lahore (Matric Science / Arts)</span>
+                  <span className="spec-val">Board of Intermediate and Secondary Education, Lahore.</span>
                 </div>
               </div>
             </div>
@@ -282,7 +285,7 @@ function ProjectsPage({ onNavigate, onDonateClick }) {
               <div className="status-badge-envisioned">
                 <Target size={14} /> Envisioned High School Project
               </div>
-              <h2 className="project-title">Secondary High School Expansion (Grades 6–10)</h2>
+              <h2 className="project-title">High School Expansion (Grades 6–10)</h2>
               <p className="project-lead">
                 In Shahdara, thousands of bright children pass Grade 5 only to drop out permanently because local secondary high schools are either too expensive, too distant, or lacking proper safety.
               </p>
@@ -332,7 +335,7 @@ function ProjectsPage({ onNavigate, onDonateClick }) {
             <div className="status-badge-flagship">
               <Cpu size={14} /> Flagship Economic Empowerment Initiative
             </div>
-            <h2 className="project-title-center">Selfless Technical & Vocational Training Institute</h2>
+            <h2 className="project-title-center">Selfless Humanitarian Service Technical & Vocational Training Institute</h2>
             <p className="project-lead-center">
               A state-of-the-art vocational center designed to provide free 2 to 6 month certified technical courses to marginalized youth, equipping them with immediate, marketable skills that create lifelong financial independence.
             </p>
@@ -401,6 +404,43 @@ function ProjectsPage({ onNavigate, onDonateClick }) {
                     <Heart size={16} fill="currentColor" /> Sponsor This Technical Course
                   </button>
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* PROJECT 3 (NEW): Tailoring Training Centre for Girls (No Picture) */}
+      <section id="tailoring-centre" className="project-detail-section envisioned-project-bg">
+        <div className="container">
+          <div className="project-detail-grid project-detail-single">
+            <div className="project-text-content">
+              <div className="status-badge-envisioned">
+                <Target size={14} /> Project 3 • Envisioned Women&apos;s Empowerment Initiative
+              </div>
+              <h2 className="project-title">Tailoring Training Centre for Girls</h2>
+              <p className="project-lead">
+                In Pakistan, in rural and poor communities, girls / women are usually deprived of education and employment opportunities. They have no opportunities other than working in people&apos;s homes as domestic servants, maids and cleaners. A common way to uplift these communities is to start a tailoring training and employment centre, where they can learn the cutting, stitching and embroidery of dresses, as well as work to manufacture products for sale. We intend to start the tailoring training centre in an appropriate poor / shanty town area in Lahore.
+              </p>
+
+              <div className="pillar-highlights-grid">
+                <div className="pillar-card">
+                  <h5 className="pillar-title">Cutting, Stitching &amp; Embroidery</h5>
+                  <p className="pillar-desc">Practical hands-on training in dress cutting, tailoring, and traditional and modern embroidery skills.</p>
+                </div>
+                <div className="pillar-card">
+                  <h5 className="pillar-title">Training &amp; Employment Centre</h5>
+                  <p className="pillar-desc">Beyond training, women can work directly at the centre to manufacture garments and products for sale, earning dignified household income.</p>
+                </div>
+              </div>
+
+              <div className="project-action-row" style={{ marginTop: "24px" }}>
+                <button
+                  className="btn btn-primary"
+                  onClick={() => onDonateClick("Support our Institutes and Projects (any amount)")}
+                >
+                  <Heart size={16} fill="currentColor" /> Support the Tailoring Training Centre
+                </button>
               </div>
             </div>
           </div>

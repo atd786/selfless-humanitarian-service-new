@@ -32,7 +32,7 @@ function MissionPage({ onNavigate, onDonateClick }) {
     },
     {
       num: "03",
-      title: "Secondary & Evening Academy",
+      title: "High School & Evening Academy",
       desc: "Bridging the competitive gap in Grades 9–12 through intensive evening tutoring, ensuring underprivileged students pass university entrance exams.",
       icon: <BookOpen size={22} />
     },

@@ -185,15 +185,15 @@
 .nav-desktop {
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 3px;
   flex-shrink: 0;
 }
 
 .nav-link {
-  font-size: 0.84rem;
+  font-size: 0.82rem;
   font-weight: 600;
   color: var(--text-dark);
-  padding: 6px 9px;
+  padding: 6px 8px;
   border-radius: var(--radius-full);
   position: relative;
   text-decoration: none;
@@ -286,28 +286,28 @@
   -webkit-overflow-scrolling: touch;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1240px) {
   .nav-logo {
     height: 46px;
   }
   .brand-title {
-    font-size: 0.96rem;
+    font-size: 0.94rem;
     line-height: 1.06;
   }
   .nav-desktop {
-    gap: 2px;
+    gap: 1px;
   }
   .nav-link {
-    font-size: 0.79rem;
-    padding: 6px 7px;
+    font-size: 0.77rem;
+    padding: 6px 6px;
   }
   .nav-donate-btn {
-    padding: 8px 13px;
-    font-size: 0.82rem;
+    padding: 8px 12px;
+    font-size: 0.8rem;
   }
 }
 
-@media (max-width: 1080px) {
+@media (max-width: 1140px) {
   .top-bar-left {
     gap: 10px;
   }

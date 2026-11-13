@@ -33,16 +33,23 @@ function Donations({ selectedProject }) {
     {
       title: "Sponsor a Child's Tuition",
       amountPKR: "PKR 5,500 / mo",
-      amountUSD: "USD 20 / month",
+      amountUSD: "USD 20 / mo",
       desc: "Provides 100% free tuition, English textbooks, notebooks, stationery, and uniforms for one student.",
       tag: "Most Popular"
     },
     {
       title: "Daily Nutritious Student Meals",
       amountPKR: "PKR 11,000 / mo",
-      amountUSD: "USD 40 / month",
+      amountUSD: "USD 40 / mo",
       desc: "Funds daily wholesome meals between study sessions so impoverished children never study on an empty stomach.",
       tag: "Vital Care"
+    },
+    {
+      title: "Sponsor a Classroom (10 Students)",
+      amountPKR: "PKR 55,000 / mo",
+      amountUSD: "$200 / mo",
+      desc: "Sponsors complete monthly schooling, teacher support, textbooks, and learning supplies for a classroom of 10 students.",
+      tag: "High Impact"
     },
     {
       title: "High School Lab & Desk Fund",
@@ -57,6 +64,13 @@ function Donations({ selectedProject }) {
       amountUSD: "$300 one-time",
       desc: "Sponsors workstation PCs, electronics lab toolkits, and test benches for our technical training institute.",
       tag: "Career Launch"
+    },
+    {
+      title: "Support our Institutes and Projects",
+      amountPKR: "(any amount)",
+      amountUSD: "PKR or USD",
+      desc: "Contribute any amount toward our schools, evening academy, vocational institute, and girls tailoring training centre.",
+      tag: "Flexible Giving"
     }
   ];
 

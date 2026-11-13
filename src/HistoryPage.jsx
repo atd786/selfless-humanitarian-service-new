@@ -43,7 +43,7 @@ function HistoryPage({ onNavigate, onDonateClick }) {
       year: "2020–2021",
       title: "Navigating the COVID-19 Crisis",
       subtitle: "Zero Children Left Behind",
-      desc: "When pandemic lockdowns forced mass school closures across Pakistan, Selfless never abandoned its students. The NGO distributed dry ration food baskets, hygiene kits, and customized take-home study packs to student doorsteps while continuing regular staff honorariums.",
+      desc: "When pandemic lockdowns forced mass school closures across Pakistan, Selfless Humanitarian Service never abandoned its students. The NGO distributed dry ration food baskets, hygiene kits, and customized take-home study packs to student doorsteps while continuing regular staff honorariums.",
       icon: <ShieldCheck size={20} />
     },
     {
@@ -89,7 +89,7 @@ function HistoryPage({ onNavigate, onDonateClick }) {
                 In 2015, Dr. Khushro Shahookar, having completed his Ph.D. in the United States and observing the extreme socioeconomic polarization in Pakistan, determined that the only true equalizer for marginalized families was high-calibre, English-medium education.
               </p>
               <p className="body-text">
-                He united with <strong>Mr. Solomon Samuel Bhatti</strong>, an educator with over three decades of teaching and administrative experience in Punjab, and his wife <strong>Mrs. Shakeela Solomon</strong>. Together, they identified Shahdara, Lahore—an area characterized by dense populations of daily-wage laborers, brick-kiln workers, and neglected orphans—as their mission field.
+                He united with <strong>Mr. Solomon Samuel Bhatti</strong>, an educator with extensive teaching and administrative experience in Punjab, and his wife <strong>Mrs. Shakeela Solomon</strong>. Together, they identified Shahdara, Lahore—an area characterized by dense populations of daily-wage laborers, brick-kiln workers, and neglected orphans—as their mission field.
               </p>
 
               <div className="intro-quote-card">
@@ -102,7 +102,7 @@ function HistoryPage({ onNavigate, onDonateClick }) {
 
             <div className="history-image-col">
               <div className="history-framed-card">
-                <img src="./hero-bg.png" alt="Selfless School History" className="history-img" />
+                <img src="./hero-bg.png" alt="Selfless Humanitarian Service School History" className="history-img" />
                 <div className="history-card-caption">
                   <MapPin size={15} /> Shahdara, Lahore — Serving continuously since 2015
                 </div>

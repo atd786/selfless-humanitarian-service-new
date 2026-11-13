@@ -35,8 +35,8 @@ function Project({ onDonateClick }) {
           </div>
           <h2 className="section-title">Our Envisioned Projects</h2>
           <p className="section-subtitle">
-            Two strategic, high-impact initiatives specifically tailored to empower 
-            impoverished youth and children in Shahdara, Lahore.
+            Three strategic, high-impact initiatives specifically tailored to empower 
+            impoverished youth, women, and children in Lahore.
           </p>
         </div>
 
@@ -170,7 +170,7 @@ function Project({ onDonateClick }) {
               <div className="project-cta-row">
                 <button 
                   className="btn btn-accent"
-                  onClick={() => onDonateClick("IT and Vocational Training Equipment PKR 85,000, $300 one-time")}
+                  onClick={() => onDonateClick("IT and Vocational Training Equipment PKR 85,000 or $300 one-time")}
                 >
                   <Heart size={16} fill="currentColor" /> Fund Technical Institute
                 </button>
@@ -203,6 +203,41 @@ function Project({ onDonateClick }) {
                   <Clock size={16} className="fact-icon icon-accent" />
                   <span>2 to 6 Month Fast-Track Durations</span>
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Project 3: Tailoring Training Centre for Girls (No Image) */}
+        <div className="project-feature-card">
+          <div className="project-card-grid project-card-no-image">
+            <div className="project-text-column">
+              <div className="project-tag">Project 3 (Envisioned)</div>
+              <h3 className="project-name">
+                Tailoring Training Centre for Girls
+              </h3>
+              <p className="project-lead">
+                In Pakistan, in rural and poor communities, girls / women are usually deprived of education and employment opportunities. They have no opportunities other than working in people&apos;s homes as domestic servants, maids and cleaners. A common way to uplift these communities is to start a tailoring training and employment centre, where they can learn the cutting, stitching and embroidery of dresses, as well as work to manufacture products for sale. We intend to start the tailoring training centre in an appropriate poor / shanty town area in Lahore.
+              </p>
+
+              <div className="project-quick-facts" style={{ marginBottom: "22px" }}>
+                <div className="fact-item">
+                  <MapPin size={16} className="fact-icon" />
+                  <span>Target Location: Appropriate Poor / Shanty Town Area in Lahore</span>
+                </div>
+                <div className="fact-item">
+                  <CheckCircle2 size={16} className="fact-icon" />
+                  <span>Cutting, Stitching, Dress Embroidery & Product Manufacturing for Sale</span>
+                </div>
+              </div>
+
+              <div className="project-cta-row">
+                <button 
+                  className="btn btn-primary"
+                  onClick={() => onDonateClick("Support our Institutes and Projects (any amount)")}
+                >
+                  <Heart size={16} fill="currentColor" /> Support Tailoring Training Centre
+                </button>
               </div>
             </div>
           </div>

@@ -12,11 +12,12 @@ import ProjectsPage from "./ProjectsPage";
 import HistoryPage from "./HistoryPage";
 import TeamPage from "./TeamPage";
 import GalleryPage from "./GalleryPage";
+import VolunteerPage from "./VolunteerPage";
 import DonatePage from "./DonatePage";
 
 function parseHash(hash) {
   const clean = hash.replace(/^#\/?/, "").toLowerCase().trim();
-  const validPages = ["about", "mission", "projects", "history", "team", "gallery", "donate"];
+  const validPages = ["about", "mission", "projects", "history", "team", "gallery", "volunteer", "donate"];
   if (validPages.includes(clean)) {
     return clean;
   }
@@ -124,6 +125,12 @@ function App() {
         )}
         {currentPage === "gallery" && (
           <GalleryPage 
+            onNavigate={navigateTo} 
+            onDonateClick={handleOpenDonate} 
+          />
+        )}
+        {currentPage === "volunteer" && (
+          <VolunteerPage 
             onNavigate={navigateTo} 
             onDonateClick={handleOpenDonate} 
           />

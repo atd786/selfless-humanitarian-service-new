@@ -1,0 +1,221 @@
+.volunteer-page {
+  animation: fadeInPage 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.volunteer-main-section {
+  padding: 76px 0 92px;
+  background-color: #f8fafc;
+}
+
+.volunteer-grid {
+  display: grid;
+  grid-template-columns: 1.45fr 0.9fr;
+  gap: 36px;
+  align-items: start;
+}
+
+.volunteer-primary-card {
+  background-color: #ffffff;
+  border: 1px solid var(--border, #e2e8f0);
+  border-radius: var(--radius-lg, 16px);
+  padding: 44px 40px;
+  box-shadow: var(--shadow-md);
+}
+
+.volunteer-heading {
+  font-size: clamp(1.8rem, 3.2vw, 2.35rem);
+  font-weight: 800;
+  color: var(--text-dark, #0f172a);
+  margin: 10px 0 18px;
+  line-height: 1.2;
+}
+
+.volunteer-lead {
+  font-size: 1.12rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 16px;
+  line-height: 1.6;
+}
+
+.volunteer-reasons-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin: 0 0 20px;
+  padding: 18px 20px;
+  background-color: #fff8f8;
+  border: 1px solid rgba(136, 0, 21, 0.14);
+  border-left: 4px solid var(--primary, #880015);
+  border-radius: 12px;
+}
+
+.volunteer-reasons-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 1.05rem;
+  color: #1e293b;
+  line-height: 1.6;
+}
+
+.vol-check-icon {
+  color: var(--primary, #880015);
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+.volunteer-closing {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--primary, #880015);
+  line-height: 1.65;
+  margin-bottom: 28px;
+}
+
+.volunteer-highlights-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+  margin-bottom: 30px;
+}
+
+.vol-highlight-box {
+  background-color: #f8fafc;
+  border: 1px solid var(--border, #e2e8f0);
+  border-radius: 12px;
+  padding: 18px;
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.vol-box-icon {
+  color: var(--primary, #880015);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.vol-box-title {
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: var(--text-dark, #0f172a);
+  margin-bottom: 6px;
+}
+
+.vol-box-desc {
+  font-size: 0.88rem;
+  color: var(--text-body, #475569);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.volunteer-cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.volunteer-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.volunteer-info-card {
+  background-color: #ffffff;
+  border: 1px solid var(--border, #e2e8f0);
+  border-radius: var(--radius-lg, 16px);
+  padding: 28px;
+  box-shadow: var(--shadow-sm);
+}
+
+.vol-card-title {
+  font-size: 1.18rem;
+  font-weight: 800;
+  color: var(--text-dark, #0f172a);
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border, #e2e8f0);
+}
+
+.vol-info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.vol-info-item:last-child {
+  margin-bottom: 0;
+}
+
+.vol-info-icon {
+  color: var(--primary, #880015);
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+.vol-info-item strong {
+  display: block;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--text-dark, #0f172a);
+  margin-bottom: 2px;
+}
+
+.vol-info-item p {
+  font-size: 0.9rem;
+  color: var(--text-body, #475569);
+  line-height: 1.5;
+  margin: 0;
+  word-break: break-word;
+}
+
+.vol-info-item a {
+  color: var(--primary, #880015);
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.volunteer-support-card {
+  background: linear-gradient(135deg, #7e0f21 0%, #4a0610 100%);
+  color: #ffffff;
+  border-radius: var(--radius-lg, 16px);
+  padding: 28px;
+  box-shadow: var(--shadow-lg);
+}
+
+.volunteer-support-card h4 {
+  font-size: 1.18rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.volunteer-support-card p {
+  font-size: 0.9rem;
+  color: #fecdd3;
+  line-height: 1.55;
+  margin-bottom: 18px;
+}
+
+@media (max-width: 960px) {
+  .volunteer-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .volunteer-primary-card {
+    padding: 26px 20px;
+  }
+  .volunteer-highlights-grid {
+    grid-template-columns: 1fr;
+  }
+  .volunteer-cta-row .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
